@@ -2,9 +2,10 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: #000;
 }
 .navbar {
-    background:#000;
+    background:#222;
 }
 .nav-link,
 .navbar-brand {
@@ -39,13 +40,14 @@ body {
 }
 .description h1 {
 	color: #e4e2e2;
-    background-color: black;
+    background-color: #22222250;
 }
 .description p {
-	color: #0667c2;
-	font-size: 1.3rem;
+	color: #ffffff;
+	font-size: 1.5rem;
 	line-height: 1.5;
-    background-color: black;
+    background-color: #22222250;
+    
 }
 .description button {
     border:1px solid #6ab446;
@@ -57,4 +59,59 @@ body {
 	border:1px solid #fff;
     background:#fff;
     color:#000;
+}
+.features {
+	margin: 0;
+	padding: 1em;
+	position: relative;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.feature-title {
+	color: #ffffff;
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+    text-align: center;
+}
+.features img {
+	-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+	margin-bottom: 16px;
+}
+.features p, h3 {
+    color: #ffffff;
+    font-size: 1.0rem;
+    margin-top: 20px;
+    text-align: center;
+}
+.features .form-control,
+.features input {
+	border-radius: 0;
+}
+.features .btn {
+    background-color: #0fb71f;
+    border: 1px solid #589b37;
+    color: #fff;
+    margin-top: 20px;
+}
+.features .btn:hover {
+    background-color: #333;
+    border: 1px solid #333;
+}
+html {
+    background-color: #000;
+}
+.page-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 60px 0 30px;
+}
+.footer-copyright {
+    color: #666;
+    padding: 40px 0;
 }
