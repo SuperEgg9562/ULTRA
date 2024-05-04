@@ -6,11 +6,11 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <title>Ultra Web Spaces</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#">&#9886;Dev &#9775; Test&#9887;</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -30,14 +30,24 @@
             </ul>
         </div>
     </nav>
-
     <header class="page-header header container-fluid">
-    <div class="overlay"></div>
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="container-fluid">
+                        <canvas id="Matrix" width="300" height="300">
+                            Sorry, your browser doesn't support the &lt;canvas&gt; element.
+                        </canvas>
+                    </div>
+                    <!-- Other columns here -->
+                </div>
+            </div>
+        </div>
     </header>
-
 <script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="custom/main.js"></script>
+<script src="custom/index.js"></script>
 </body>
 
 </html>
