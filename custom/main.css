@@ -25,4 +25,5 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
+    object-fit: cover;
 }
