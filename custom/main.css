@@ -25,5 +25,5 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    max-height: fit-content;
+    max-height: 100%;
 }
