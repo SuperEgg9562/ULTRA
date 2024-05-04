@@ -47,3 +47,14 @@ body {
 	line-height: 1.5;
     background-color: black;
 }
+.description button {
+    border:1px solid #6ab446;
+    background:#4646b4;
+    border-radius: 0;
+    color:#fff;
+}
+.description button:hover {
+	border:1px solid #fff;
+    background:#fff;
+    color:#000;
+}
