@@ -24,6 +24,6 @@ body {
     background-image: url('../images/header-background.jpg');
     background-size: cover;
     background-position: center;
-    position: fixed;
-    object-fit: cover;
+    position: relative;
+    max-height: fit-content;
 }
