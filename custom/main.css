@@ -1,9 +1,17 @@
+/*--- page ---*/
+
+html {
+    background-color: #000;
+}
 body {
     padding: 0;
     margin: 0;
     height: 100%;
     background-color: #000;
 }
+
+/*--- navigation bar ---*/
+
 .navbar {
     background:#222;
 }
@@ -21,6 +29,9 @@ body {
 .navbar-collapse {
     justify-content: flex-end;
 }
+
+/*--- header ---*/
+
 .header {
     background: black;
     overflow: hidden;
@@ -60,6 +71,9 @@ body {
     background:#fff;
     color:#000;
 }
+
+/*--- feature section ---*/
+
 .features {
 	margin: 0;
 	padding: 1em;
@@ -103,9 +117,9 @@ body {
     background-color: #333;
     border: 1px solid #333;
 }
-html {
-    background-color: #000;
-}
+
+/*--- footer ---*/
+
 .page-footer {
     background-color: #222;
     color: #ccc;
@@ -115,6 +129,9 @@ html {
     color: #666;
     padding: 40px 0;
 }
+
+/*--- team section ---*/
+
 .background {
 	background: #dedec8;
 	padding: 4em 0;
@@ -137,3 +154,48 @@ html {
 	margin-bottom: 0;
 	text-transform: uppercase;
 }
+
+/*--- media queries ---*/
+
+@media (max-width: 991.98px) {
+
+	.team {
+		padding: 0 15px;
+	}
+	
+}
+
+@media (max-width: 575.98px) {
+
+	.description {
+		left: 0;
+		padding: 0 15px;
+		position: absolute;
+		top: 10%;
+		transform: none;
+		text-align: center;
+	}
+	
+	.description h1 {
+		font-size: 2em;
+	}
+	
+	.description p {
+		font-size: 1.2rem;
+	}
+	
+	.features {
+		margin: 0;
+	}
+	
+	.team {
+		max-width: 60%;
+	}
+	
+	#demo-modal .btn {
+		min-width: auto;
+	}
+
+}
+
+/*--- modal ---*/
