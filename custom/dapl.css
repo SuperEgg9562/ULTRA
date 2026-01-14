@@ -43,7 +43,7 @@ body {
     padding: 0;
 }
 .description {
-	left: auto;
+	left: 50%;
 	position: absolute;
 	top: auto;
 	transform: translate(-50%, -55%);
