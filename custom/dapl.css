@@ -2,13 +2,18 @@
 
 html {
     background-color: #000;
+     padding: 10px;
+     margin: 1px;
+     
 }
 body {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    background-color: #000;
+     background-color: #000;
+     height: 100%;
+     padding: 0;
+     margin: 0;
+
 }
+
 
 /*--- navigation bar ---*/
 
@@ -33,89 +38,53 @@ body {
 /*--- header ---*/
 
 .header {
-    background: black;
-    overflow: hidden;
+    background-color: #000;
+    overflow: hidden;   
     background-size: cover;
     background-position: center;
     position: relative;
     margin: 0;
     width: 100%;
+    height: 100vh;
     padding: 0;
 }
 .description {
-	left: 50%;
-	position: absolute;
-	top: auto;
-	transform: translate(-50%, -55%);
-	text-align: justify;
+	   left: 50%;
+	   position: absolute;
+	   top: 70%;
+	   transform: translate(-50%, -55%);
+	   text-align: left;
+    padding: 10px;
+    margin: 0;
+    width: 80%;
+    background-color: #0c0c0c;
 }
-.description h1, h2 {
-	color: #e4e2e2;
-    background-color: black;
+.description h1 {
+	   color: #87dc87;
+    
+    font-weight: bold;
+    font-size: 2rem;
+}
+.description h2 {
+	   color: #87dc87;
+    
+    font-size: 1.5rem;
+}
+.description h3 {
+    color: #00cc00;
+    font-size: 1rem;
 }
 .description p {
-	color: #ffffff;
-	font-size: 1.5rem;
-	line-height: 1.5;
-    background-color: black;
-    
+	   color: #00cc00;
+	   font-size: 1rem;
+	   line-height: 1.5;
+  
 }
-.description button {
-    border:1px solid #6ab446;
-    background:#4646b4;
-    border-radius: 0;
-    color:#fff;
+.description ul {
+    color: #00cc00;
 }
-.description button:hover {
-	border:1px solid #fff;
-    background:#fff;
-    color:#000;
-}
-
-/*--- feature section ---*/
-
-.features {
-	margin: 0;
-	padding: 1em;
-	position: relative;
-    background-color: #000;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-}
-.feature-title {
-	color: #ffffff;
-	font-size: 1.3rem;
-	font-weight: 700;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-    text-align: center;
-}
-.features img {
-	-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-	margin-bottom: 16px;
-}
-.features p, h3 {
-    color: #ffffff;
-    font-size: 1.0rem;
-    margin-top: 20px;
-    text-align: center;
-}
-.features .form-control,
-.features input {
-	border-radius: 0;
-}
-.features .btn {
-    background-color: #0fb71f;
-    border: 1px solid #589b37;
-    color: #fff;
-    margin-top: 20px;
-}
-.features .btn:hover {
-    background-color: #333;
-    border: 1px solid #333;
+.description li {
+    color: #87dc87;
 }
 
 /*--- footer ---*/
@@ -123,36 +92,13 @@ body {
 .page-footer {
     background-color: #222;
     color: #ccc;
-    padding: 60px 0 30px;
+    height: 100%;
+    width: 100%;
+    
 }
 .footer-copyright {
     color: #666;
-    padding: 40px 0;
-}
-
-/*--- team section ---*/
-
-.background {
-	background: #000;
-	padding: 4em 0;
-}
-.team {
-	color: #bdbdb9;
-	padding: 0 180px;
-}
-.team .card-columns {
-	-webkit-column-count: 4;
-	-moz-column-count: 4;
-	column-count: 4;
-}
-.team .card {
-	background:none;
-	border: none;
-}
-.team .card-title {
-	font-size: 1.3rem;
-	margin-bottom: 0;
-	text-transform: uppercase;
+    padding: 40px ;
 }
 
 /*--- media queries ---*/
@@ -177,7 +123,7 @@ body {
 	}
 	
 	.description h1 {
-		font-size: 2em;
+		font-size: 2rem;
 	}
 	
 	.description p {
