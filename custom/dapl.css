@@ -292,10 +292,12 @@ canvas {
     td {
       padding: 0.125em 0.5em 0.25em 0.5em;
     }
+    /*
     header {
       margin-bottom: 4em;
       text-align: center;
     }
+    */  
     #TOC li {
       list-style: none;
     }
