@@ -119,12 +119,12 @@ canvas {
     line-height: 1.5;
 }
 
-.description figcaption {
+.description figcaption,
+.description pre code,
+.abstract {
     color: #07b768;
 }
-.description pre code {
-    color: #07b768;
-}
+
 .description h1,
 .description h2,
 .description h3,
@@ -146,6 +146,7 @@ canvas {
     border-bottom: 1px dashed rgba(0, 204, 0, 0.2); 
     padding-bottom: 4px;
 }
+
 
 /*--- footer ---*/
 .page-footer {
