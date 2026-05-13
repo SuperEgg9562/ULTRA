@@ -118,10 +118,10 @@ canvas {
     margin-bottom: 0.4em;
     line-height: 1.5;
 }
-
 .description figcaption,
 .description pre code,
-.abstract {
+.abstract,
+.table {
     color: #07b768;
 }
 
