@@ -147,7 +147,11 @@ canvas {
     border-bottom: 1px dashed rgba(0, 204, 0, 0.2); 
     padding-bottom: 4px;
 }
-
+code, pre, .sourceCode {
+    font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
+    font-size: 90%;
+    letter-spacing: 0.5px;
+}
 
 /*--- footer ---*/
 .page-footer {
