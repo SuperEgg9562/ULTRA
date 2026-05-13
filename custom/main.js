@@ -1,10 +1,8 @@
+/**
+ * Decypher The Universe - Main Core Management Engine
+ */
 $(document).ready(function(){
-	$('.header').height($(window).height());
-})
-var ready = (callback) => {
-    if (document.readyState != "loading") callback();
-    else document.addEventListener("DOMContentLoaded", callback);
-}
-ready(() => {
-    document.querySelector(".header").style.height = window.innerHeight + "px";
-})
+    // Static layout height configurations have been safely offloaded to responsive CSS rules.
+    console.log("System Status: Main operational modules active.");
+});
+

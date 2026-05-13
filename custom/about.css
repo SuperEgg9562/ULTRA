@@ -34,20 +34,20 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    border: 4px solid var(--matrix-glow); 
+    border: 4px solid var(--matrix-glow);
     box-shadow: inset 0 0 100px rgba(0, 255, 0, 0.25), 0 0 40px rgba(0, 255, 0, 0.4); 
-    pointer-events: none; 
-    z-index: 9999; 
+    pointer-events: none;
+    z-index: 9999;
 }
 
 /*--- Global Full-Bleed Canvas Layers ---*/
 #Matrix {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; 
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     display: block;
     pointer-events: none;
 }
@@ -58,7 +58,7 @@ body {
 .article-container,
 .page-footer {
     position: relative;
-    z-index: 10; 
+    z-index: 10;
 }
 
 /*--- Fixed Bootstrap Navigation Bar Overrides ---*/
@@ -66,7 +66,7 @@ body {
     background-color: #050505 !important; 
     border-bottom: 2px solid var(--matrix-glow) !important; 
     padding: 15px 20px;
-    box-shadow: 0 0 25px rgba(0, 255, 0, 0.35); 
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.35);
 }
 
 .navbar-brand {
@@ -92,7 +92,7 @@ body {
 
 /*--- Responsive Header & Hero Layout Engine ---*/
 .header {
-    background: transparent !important; 
+    background: transparent !important;
     min-height: 50vh;
     display: flex;
     align-items: center;
@@ -161,7 +161,7 @@ body {
 }
 
 .background {
-    background: transparent !important; 
+    background: transparent !important;
     padding: 2em 0;
 }
 
@@ -181,7 +181,7 @@ body {
     border: 1px solid var(--matrix-border);
     padding: 30px 20px;
     border-radius: 0;
-    backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
     display: flex;
     flex-direction: column;
     align-items: center;
