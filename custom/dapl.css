@@ -119,13 +119,6 @@ canvas {
     margin-bottom: 0.4em;
     line-height: 1.5;
 }
-.description figcaption,
-.description pre code,
-.abstract,
-.table {
-    color: #07b768;
-}
-
 .description h1,
 .description h2,
 .description h3,
@@ -147,7 +140,7 @@ canvas {
     border-bottom: 1px dashed rgba(0, 204, 0, 0.2); 
     padding-bottom: 4px;
 }
-code, pre, .sourceCode {
+figcaption, table,table caption, tbody, td, th , code, pre, .sourceCode, .abstract {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
