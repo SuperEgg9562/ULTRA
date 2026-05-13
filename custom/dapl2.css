@@ -1,6 +1,5 @@
 /*--- page ---*/
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -212,10 +211,7 @@ figcaption, table,table caption, tbody, td, th, .abstract {
 
 /*--- print ---*/
 @media print {
-    html {
-        background-color: #000;
-    }
-
+    html { background-color: #000; }
     body {
         background-color: transparent;
         color: #00cc00;
