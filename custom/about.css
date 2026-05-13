@@ -1,22 +1,22 @@
-/*--- Core Page & Variables ---*/
 :root {
-    --matrix-dark-bg: #050505;
-    --matrix-card-bg: rgba(10, 10, 10, 0.95);
+    --matrix-bg: #000000;
+    --matrix-card-bg: rgba(5, 5, 5, 0.90);
+    --matrix-overlay: rgba(34, 34, 34, 0.50);
     --matrix-dim: #00aa00;
     --matrix-glow: #00ff00;
-    --matrix-bright: #33ff33;
+    --matrix-bright: #87dc87;
     --matrix-text: #a1ffa1;
-    --matrix-border: rgba(0, 255, 0, 0.4);
+    --matrix-border: rgba(0, 204, 0, 0.3);
     --matrix-font: 'Space Mono', 'Share Tech Mono', 'Courier New', monospace;
     --header-font: 'Orbitron', 'Share Tech Mono', sans-serif;
 }
 
-html, 
+html,
 body {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    background-color: #000;
+    background-color: var(--matrix-bg);
     border: 2px solid var(--matrix-glow);
     color: var(--matrix-text);
     hyphens: auto;
@@ -26,43 +26,14 @@ body {
     font-family: var(--matrix-font);
 }
 
-/* Full-screen Matrix background canvas old */
-/*canvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: transparent;
-    border: 2px solid var(--matrix-glow);
-    z-index: 0;
-    pointer-events: none;
-}*/
-/* Full-screen Matrix background canvas with illuminated border new */
-canvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: transparent;
-    z-index: 0;
-    pointer-events: none; 
-    
-    /* Illuminated Neon Matrix Border Frame */
-    border: 4px solid var(--matrix-glow) !important;
-    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.5), 
-                0 0 20px rgba(0, 255, 0, 0.5);
-    box-sizing: border-box; 
-}
 /*--- Bootstrap Navigation Bar Overrides ---*/
 .navbar {
-    background-color: var(--matrix-dark-bg) !important; 
+    background-color: #050505 !important; 
     border: 2px solid var(--matrix-glow); 
     position: relative;
-    z-index: 2;
+    z-index: 10;
     padding: 10px 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
 }
 
 .navbar-brand {
@@ -79,15 +50,16 @@ canvas {
     transition: all 0.2s ease-in-out;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--matrix-glow) !important; 
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
     background-color: rgba(0, 255, 0, 0.05);
 }
-/*--- header ---*/
 
+/*--- Responsive Header & Hero Section ---*/
 .header {
-    background: black;
+    background: var(--matrix-bg);
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -95,105 +67,53 @@ canvas {
     margin: 0;
     width: 100%;
     padding: 0;
-}
-.description {
-	left: 50%;
-	position: absolute;
-	top: 45%;
-	transform: translate(-50%, -55%);
-	text-align: center;
-	border: 1px solid rgba(0, 204, 0, 0.15);
- font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
-	text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-}
-.description h1 {
-	color: #e4e2e2;
-    background-color: #22222250;
-}
-.description p {
-	color: #ffffff;
-	font-size: 1.5rem;
-	line-height: 1.5;
-    background-color: #22222250;
-    
-}
-.description button {
-    border:1px solid #6ab446;
-    background:#088020;
-    border-radius: 0;
-    color:#fff;
-}
-.description button:hover {
-	border:1px solid #fff;
-    background:#fff;
-    color:#000;
+    min-height: 70vh; /* Prevents container collapse */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/*--- Main Terminal Content Card ---*/
+/* Centered Terminal Text Overlay */
 .description {
-    background-color: var(--matrix-card-bg);
+    position: absolute; 
+    max-width: 45em;
+    width: 90%;
+    margin: 20px auto;
     padding: 30px;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    border: 1px solid var(--matrix-glow);
+    text-align: center;
+    background-color: var(--matrix-card-bg);
+    border: 1px solid var(--matrix-border);
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
-}
-
-/* Typography Hierarchy */
-.description h1, .description h2, .description h3, .description h4 {
     font-family: var(--header-font);
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    margin-top: 1.4em;
-    margin-bottom: 0.5em;
+    z-index: 3;
 }
 
 .description h1 {
     color: var(--matrix-glow);
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    border-bottom: 2px dashed var(--matrix-border); 
-    padding-bottom: 8px; 
+    background-color: var(--matrix-overlay);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .description h2 {
     color: var(--matrix-bright);
     font-size: 1.6rem;
     border-bottom: 1px dashed var(--matrix-border); 
-    padding-bottom: 6px;
-}
-
-.description h3 {
-    color: var(--matrix-glow);
-    font-size: 1.2rem;
+    padding-bottom: 8px;
+    text-transform: uppercase;
 }
 
 .description p {
-    color: var(--matrix-text);
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.2rem;
     line-height: 1.6;
-    margin: 1em 0;
+    background-color: var(--matrix-overlay);
+    padding: 10px;
 }
 
-/* Accessible Lists (Fixed Contrast) */
-.description ul, .description ol {
-    color: var(--matrix-text);
-    padding-left: 1.7em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.description li {
-    color: var(--matrix-text);
-    margin-bottom: 0.5em;
-    line-height: 1.5;
-}
-
-.description li::marker {
-    color: var(--matrix-glow);
-}
 /* Terminal Interactive Buttons */
 .description button {
     border: 1px solid var(--matrix-bright);
@@ -323,32 +243,34 @@ canvas {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-/*--- Footer Accessibility Fix ---*/
+
+/*--- System Footers ---*/
 .page-footer {
-    position: relative;
-    z-index: 2;
-    background-color: var(--matrix-dark-bg);
-    border-top: 1px solid var(--matrix-border);
-    width: 100%;
+    background-color: #050505;
+    color: var(--matrix-bright);
+    padding: 40px 0 20px;
+    border-top: 2px solid var(--matrix-border);
 }
 
 .footer-copyright {
     color: var(--matrix-dim);
-    padding: 30px;
+    padding: 20px 0;
     font-size: 0.9rem;
 }
-/*--- Media Queries (Bootstrap Aligned) ---*/
+
+/*--- Bootstrap-Aligned Responsive Engine ---*/
 @media (max-width: 991.98px) {
-    .article-container, .container-dapl {
-        max-width: 100%;
+    .team {
+        padding: 0 30px;
     }
 }
 
-@media (max-width: 575.98px) {
-    .article-container, .container-dapl {
-        padding: 10px;
+@media (max-width: 768px) {
+    .header {
+        min-height: auto;
+        padding: 40px 0;
     }
-    
+
     .description {
         padding: 20px;
         text-align: left; 
@@ -358,49 +280,35 @@ canvas {
         font-size: 1.8rem;
     }
     
-    .description h2 {
-        font-size: 1.4rem;
-    }
-
     .description p {
-        font-size: 1rem; 
+        font-size: 1rem;
+    }
+    
+    .team {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    #demo-modal .btn {
+        min-width: auto;
     }
 }
 
-/*--- Modernized Print Output ---*/
-@media print {
-    html { 
-        background-color: #fff; 
-    }
-    body {
-        background-color: #fff;
-        color: #000;
-        font-size: 11pt;
-    }
-    
-    canvas {
-        display: none;
-    }
-    
-    .navbar, .page-footer {
-        display: none; 
-    }
+/*--- Access Modal Overrides ---*/
+.modal-content {
+    background-color: #050505;
+    border: 1px solid var(--matrix-glow);
+    border-radius: 0;
+    color: var(--matrix-text);
+    font-family: var(--matrix-font);
+}
 
-    .description {
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        color: #000;
-    }
+.modal-header {
+    border-bottom: 1px dashed var(--matrix-border);
+    color: var(--matrix-glow);
+    font-family: var(--header-font);
+}
 
-    .description h1, .description h2, .description h3 {
-        color: #000;
-        text-shadow: none;
-        border-bottom: 1px solid #000;
-        page-break-after: avoid;
-    }
-    p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-    }
+.modal-footer {
+    border-top: 1px dashed var(--matrix-border);
 }
