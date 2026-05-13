@@ -326,31 +326,28 @@ body {
     .features { padding-bottom: 40px; }
     .feature-card { padding: 20px; }
 }
-/*--- Toxic Green Foreground Color Pulsing Engine ---*/
+/*--- Selective White Extraction & Toxic Glow Engine ---*/
 .ohm-symbol {
     max-width: 110px !important;
     display: inline-block;
+    background-color: transparent !important;
     
-    /* Converts black/grey image assets into high-saturation toxic green */
-    filter: invert(47%) sepia(93%) saturate(2421%) hue-rotate(97deg) brightness(112%) contrast(119%) drop-shadow(0 0 6px rgba(0, 255, 0, 0.4));
-    opacity: 0.8;
+    filter: brightness(100%) contrast(200%) sepia(100%) hue-rotate(85deg) saturate(1200%) drop-shadow(0 0 4px rgba(0, 255, 0, 0.4));
+    opacity: 0.85;
     
-    /* Connects the complex toxic color fluctuation keyframe loop */
-    animation: toxicColorPulse 3.5s ease-in-out infinite;
+    
+    animation: isolatedToxicPulse 4s ease-in-out infinite;
 }
 
-@keyframes toxicColorPulse {
+@keyframes isolatedToxicPulse {
     0%, 100% {
         transform: scale(1);
-        /* Target Dim Toxic Green (#00aa00) */
-        filter: invert(47%) sepia(93%) saturate(2421%) hue-rotate(97deg) brightness(85%) contrast(119%) drop-shadow(0 0 6px rgba(0, 170, 0, 0.5));
-        opacity: 0.75;
+        filter: brightness(80%) contrast(200%) sepia(100%) hue-rotate(85deg) saturate(1000%) drop-shadow(0 0 4px rgba(0, 170, 0, 0.4));
     }
     50% {
-        transform: scale(1.05);
-        /* Target Hyper-Bright Toxic Glow Green (#00ff00) */
-        filter: invert(47%) sepia(93%) saturate(2500%) hue-rotate(97deg) brightness(140%) contrast(130%) drop-shadow(0 0 20px rgba(0, 255, 0, 1)) drop-shadow(0 0 35px rgba(0, 255, 0, 0.6));
-        opacity: 1;
+        transform: scale(1.04);
+        
+        filter: brightness(150%) contrast(250%) sepia(100%) hue-rotate(85deg) saturate(2000%) drop-shadow(0 0 15px rgba(0, 255, 0, 0.95)) drop-shadow(0 0 25px rgba(0, 255, 0, 0.5));
     }
 }
 
