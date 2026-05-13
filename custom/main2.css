@@ -30,7 +30,7 @@ body {
 /*--- Bootstrap Navigation Bar Overrides ---*/
 .navbar {
     background-color: #050505 !important; 
-    border-bottom: 2px solid var(--matrix-border); 
+    border: 2px solid var(--matrix-glow); 
     position: relative;
     z-index: 10;
     padding: 10px 20px;
