@@ -109,6 +109,9 @@ canvas {
 .description li {
     color: #87dc87;
 }
+.description figcaption {
+    color: #07b768;
+}
 
 /*--- footer ---*/
 .page-footer {
