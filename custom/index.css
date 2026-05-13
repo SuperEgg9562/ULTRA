@@ -330,28 +330,34 @@ body {
     .features { padding-bottom: 40px; }
     .feature-card { padding: 20px; }
 }
-/*--- Dynamic Pulsating Graphic Animation ---*/
+/*--- Toxic Green Foreground Color Pulsing Engine ---*/
 .ohm-symbol {
     max-width: 110px !important;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.4));
-    opacity: 0.85;
-    /* Attaches the slow pulsing logic loop cleanly */
-    animation: matrixPulse 2s ease-in-out infinite;
     display: inline-block;
+    
+    /* Converts black/grey image assets into high-saturation toxic green */
+    filter: invert(47%) sepia(93%) saturate(2421%) hue-rotate(97deg) brightness(112%) contrast(119%) drop-shadow(0 0 6px rgba(0, 255, 0, 0.4));
+    opacity: 0.8;
+    
+    /* Connects the complex toxic color fluctuation keyframe loop */
+    animation: toxicColorPulse 3.5s ease-in-out infinite;
 }
 
-@keyframes matrixPulse {
+@keyframes toxicColorPulse {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 6px rgba(0, 255, 0, 0.3));
+        /* Target Dim Toxic Green (#00aa00) */
+        filter: invert(47%) sepia(93%) saturate(2421%) hue-rotate(97deg) brightness(85%) contrast(119%) drop-shadow(0 0 6px rgba(0, 170, 0, 0.5));
         opacity: 0.75;
     }
     50% {
-        transform: scale(1.06);
-        filter: drop-shadow(0 0 18px rgba(0, 255, 0, 0.85));
+        transform: scale(1.05);
+        /* Target Hyper-Bright Toxic Glow Green (#00ff00) */
+        filter: invert(47%) sepia(93%) saturate(2500%) hue-rotate(97deg) brightness(140%) contrast(130%) drop-shadow(0 0 20px rgba(0, 255, 0, 1)) drop-shadow(0 0 35px rgba(0, 255, 0, 0.6));
         opacity: 1;
     }
 }
+
 
 /*--- Interactive Neon Hyperlink Targets ---*/
 .features a,
