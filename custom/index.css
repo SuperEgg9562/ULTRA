@@ -336,7 +336,7 @@ body {
     filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.4));
     opacity: 0.85;
     /* Attaches the slow pulsing logic loop cleanly */
-    animation: matrixPulse 4s ease-in-out infinite;
+    animation: matrixPulse 2s ease-in-out infinite;
     display: inline-block;
 }
 
