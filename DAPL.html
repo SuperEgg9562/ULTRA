@@ -1,82 +1,79 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <!-- Google Fonts: Space Mono (Body) & Orbitron / Share Tech Mono (Headings) -->
-<link rel="preconnect" href="googleapis.com">
-<link rel="preconnect" href="gstatic.com" crossorigin>
-<link href="googleapis.com" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="custom/dapl.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<meta charset="utf-8">
-<meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<title>WHITEPAPER: Diffusive Absorptive Photonic Lattice (DAPL) A Dissipative, Self-Learning Photonic Computing Substrate (Attractor Photonic Computer — APC)</title>
+<head>
+      <link rel="preconnect" href="googleapis.com">
+      <link rel="preconnect" href="gstatic.com" crossorigin>
+      <link href="googleapis.com" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="custom/dapl.css">
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+      <meta charset="utf-8">
+      <meta name="generator" content="pandoc" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+      <title>WHITEPAPER: Diffusive Absorptive Photonic Lattice (DAPL) A Dissipative, Self-Learning Photonic Computing Substrate (Attractor Photonic Computer — APC)</title>
 </head>
 <body>
-  <canvas id="Matrix">
-    Sorry, your browser doesn't support the canvas element.
-  </canvas>
-  <nav class="navbar navbar-expand-md">
+  <canvas id="Matrix">Sorry, your browser doesn't support the canvas element.</canvas>
+   <nav class="navbar navbar-expand-md">
     <a class="navbar-brand" href="#">&#9886;Decypher The Universe &#9775; &#9887;</a>
-    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="main-navigation">
-      <ul class="navbar-nav">
+       </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="article-container">
+        </ul>
+        </div>
+        </nav>
+      <div class="article-container">
     <article class="description">
-<header id="title-block-header">
-  <h1 class="title">WHITEPAPER: Diffusive Absorptive Photonic Lattice(DAPL)<br />
-  A Dissipative, Self-Learning Photonic Computing Substrate<br />
-  (Attractor Photonic Computer — APC)</h1>
+  <header id="title-block-header">
+<h1 class="title">WHITEPAPER: Diffusive Absorptive Photonic Lattice(DAPL)<br />
+A Dissipative, Self-Learning Photonic Computing Substrate<br />
+(Attractor Photonic Computer — APC)</h1>
 <p class="date">2026-05-13</p>
 <div class="abstract">
-<div class="abstract-title">Abstract</div>
-<p>We introduce the Diffusive Absorptive Photonic Lattice (DAPL), a
-non-von-Neumann computing substrate in which computation emerges from
-light propagation, phase interference, and diffusive material memory.
-Unlike conventional photonic processors that emulate digital logic, DAPL
-performs computation through physical self-organization. Learning is
-encoded as soft, diffusive absorption changes within a fixed spatial
-geometry, biasing future light propagation toward stable,
-low-dissipation attractor states. This architecture naturally supports
-continuous learning, robustness to noise, and efficient solution of
-optimization and pattern-based problems without explicit programming or
-training algorithms.</p>
+  <div class="abstract-title">Abstract</div>
+    <p>We introduce the Diffusive Absorptive Photonic Lattice (DAPL), a
+       non-von-Neumann computing substrate in which computation emerges from
+       light propagation, phase interference, and diffusive material memory.
+       Unlike conventional photonic processors that emulate digital logic, DAPL
+       performs computation through physical self-organization. Learning is
+       encoded as soft, diffusive absorption changes within a fixed spatial
+       geometry, biasing future light propagation toward stable,
+       low-dissipation attractor states. This architecture naturally supports
+       continuous learning, robustness to noise, and efficient solution of
+       optimization and pattern-based problems without explicit programming or
+       training algorithms.
+    </p>
 </div>
 </header>
-<h1 id="motivation-and-context">1. Motivation and Context</h1>
-<p>Modern computing architectures remain constrained by:</p>
-<ul>
-<li><p>Explicit instruction execution</p></li>
-<li><p>Separation of memory and computation</p></li>
-<li><p>Clocked, discrete operation</p></li>
-<li><p>Energy inefficiency in adaptive tasks</p></li>
-</ul>
-<p>Photonic computing promises speed and efficiency, but most approaches
-attempt to replicate digital logic using light, inheriting the same
-architectural limits. DAPL proposes a different approach:</p>
-<ul>
-<li><p>Computation is not executed — it emerges.</p></li>
-<li><p>Instead of logic gates, DAPL uses physical law: Wave
-interference, Energy dissipation, Spatial diffusion, Attractor
-formation.</p></li>
-</ul>
-<h1 id="conceptual-overview">2. Conceptual Overview</h1>
-<p>DAPL consists of a fixed photonic geometry through which coherent
-light propagates. The geometry defines possible pathways, but does not
-encode computation. Computation arises from three interacting
-processes:</p>
-<ol>
-<li><p><strong>Phase Interference:</strong> Multiple propagation paths
+ <h1 id="motivation-and-context">1. Motivation and Context</h1>
+  <p>Modern computing architectures remain constrained by:</p>
+     <ul>
+     <li><p>Explicit instruction execution</p></li>
+     <li><p>Separation of memory and computation</p></li>
+     <li><p>Clocked, discrete operation</p></li>
+     <li><p>Energy inefficiency in adaptive tasks</p></li>
+     </ul>
+  <p>Photonic computing promises speed and efficiency, but most approaches
+     attempt to replicate digital logic using light, inheriting the same
+     architectural limits. DAPL proposes a different approach:</p>
+     <ul>
+     <li><p>Computation is not executed — it emerges.</p></li>
+     <li><p>Instead of logic gates, DAPL uses physical law: Wave
+     interference, Energy dissipation, Spatial diffusion, Attractor
+     formation.</p></li>
+     </ul>
+     <h1 id="conceptual-overview">2. Conceptual Overview</h1>
+     <p>DAPL consists of a fixed photonic geometry through which coherent
+     light propagates. The geometry defines possible pathways, but does not
+     encode computation. Computation arises from three interacting
+     processes:</p>
+     <ol>
+     <li><p><strong>Phase Interference:</strong> Multiple propagation paths
 interfere constructively or destructively.</p></li>
 <li><p><strong>Absorptive Material Memory:</strong> Regions experiencing
 unstable interference increase absorption slightly.</p></li>

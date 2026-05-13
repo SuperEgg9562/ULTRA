@@ -325,37 +325,45 @@ table {
 
 table caption {
     margin-bottom: 0.75em;
+    color: #87dc87;
 }
 
 tbody {
     margin-top: 0.5em;
     border-top: 1px solid #1a1a1a;
     border-bottom: 1px solid #1a1a1a;
+    color: #87dc87;
 }
 
 th {
     border-top: 1px solid #1a1a1a;
     padding: 0.25em 0.5em;
+    color: #87dc87;
 }
 
 td {
     padding: 0.125em 0.5em 0.25em 0.5em;
+    color: #87dc87;
 }
 
 #TOC li {
     list-style: none;
+    color: #87dc87;
 }
 
 #TOC ul {
     padding-left: 1.3em;
+    color: #87dc87;
 }
 
 #TOC > ul {
     padding-left: 0;
+    color: #87dc87;
 }
 
 #TOC a:not(:hover) {
     text-decoration: none;
+    color: #87dc87;
 }
 
 span.smallcaps {
