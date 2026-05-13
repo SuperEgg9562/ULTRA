@@ -143,35 +143,52 @@ canvas {
     color: var(--matrix-glow);
 }
 
-/* Consolidate Code Blocks */
-pre, code, .sourceCode {
+/* Consolidate Code Blocks & Override Bootstrap Specificity */
+.description pre,
+.description code,
+.description .sourceCode,
+pre, 
+code {
     font-family: var(--matrix-font) !important;
-    font-size: 90%;
+    font-size: 90% !important;
     letter-spacing: 0.5px;
-    color: var(--matrix-bright); 
+    color: var(--matrix-bright) !important; 
 }
 
+/* Inline code style overrides */
+.description code,
 code {
     white-space: pre-wrap;
-    background-color: rgba(0, 255, 0, 0.08);
-    padding: 2px 6px;
+    background-color: rgba(0, 255, 0, 0.08) !important;
+    padding: 2px 6px !important;
     border-radius: 3px;
-    border: 1px solid rgba(0, 255, 0, 0.2);
+    border: 1px solid rgba(0, 255, 0, 0.2) !important;
+    display: inline-block;
 }
 
+/* Large multi-line block container overrides */
+.description pre,
 pre {
-    margin: 1.5em 0;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-left: 3px solid var(--matrix-glow);
+    margin: 1.5em 0 !important;
+    overflow: auto !important;
+    background-color: rgba(5, 5, 5, 0.95) !important;
+    padding: 15px !important;
+    border-left: 3px solid var(--matrix-glow) !important;
+    border-top: 1px solid var(--matrix-border) !important;
+    border-right: 1px solid var(--matrix-border) !important;
+    border-bottom: 1px solid var(--matrix-border) !important;
+    border-radius: 0 !important;
 }
 
+/* Reset inline properties inside pre block containers */
+.description pre code,
 pre code {
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    border: none;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    display: block !important;
+    color: var(--matrix-glow) !important; 
 }
 
 /* Semantic Data Elements */

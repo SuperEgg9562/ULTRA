@@ -75,7 +75,7 @@ body {
 
 /* Centered Terminal Text Overlay */
 .description {
-    position: fixed; /* Changed from absolute to prevent multi-device text clip */
+    position: absolute; /* Changed from absolute to prevent multi-device text clip */
     max-width: 45em;
     width: 90%;
     margin: 20px auto;
