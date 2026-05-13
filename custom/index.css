@@ -330,3 +330,65 @@ body {
     .features { padding-bottom: 40px; }
     .feature-card { padding: 20px; }
 }
+/*--- Dynamic Pulsating Graphic Animation ---*/
+.ohm-symbol {
+    max-width: 110px !important;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.4));
+    opacity: 0.85;
+    /* Attaches the slow pulsing logic loop cleanly */
+    animation: matrixPulse 4s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes matrixPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px rgba(0, 255, 0, 0.3));
+        opacity: 0.75;
+    }
+    50% {
+        transform: scale(1.06);
+        filter: drop-shadow(0 0 18px rgba(0, 255, 0, 0.85));
+        opacity: 1;
+    }
+}
+
+/*--- Interactive Neon Hyperlink Targets ---*/
+.features a,
+.footer-copyright a {
+    color: var(--matrix-glow);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+/* Neon underline baseline state configuration */
+.features a::after,
+.footer-copyright a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--matrix-glow);
+    box-shadow: 0 0 8px var(--matrix-glow), 0 0 12px var(--matrix-bright);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+/* Neon activation triggers on hover states */
+.features a:hover,
+.footer-copyright a:hover {
+    color: var(--matrix-bright);
+    text-shadow: 0 0 8px var(--matrix-glow);
+}
+
+.features a:hover::after,
+.footer-copyright a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
