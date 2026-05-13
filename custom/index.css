@@ -1,0 +1,332 @@
+/*--- Core Page Config & Theme Variables ---*/
+:root {
+    --matrix-bg: #000000;
+    --matrix-card-bg: rgba(5, 5, 5, 0.90);
+    --matrix-overlay: rgba(34, 34, 34, 0.50);
+    --matrix-dim: #00aa00;
+    --matrix-glow: #00ff00;
+    --matrix-bright: #87dc87;
+    --matrix-text: #a1ffa1;
+    --matrix-border: rgba(0, 204, 0, 0.3);
+    --matrix-font: 'Space Mono', 'Courier New', monospace;
+    --header-font: 'Orbitron', sans-serif;
+}
+
+/*--- Full-bleed Structural Context Containers ---*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--matrix-bg);
+    color: var(--matrix-text);
+    overflow-x: hidden;
+    font-family: var(--matrix-font);
+    position: relative;
+}
+
+/*--- Global Outer Monitor Screen Edge Glow Layers ---*/
+.terminal-vignette-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: 4px solid var(--matrix-glow);
+    box-shadow: inset 0 0 100px rgba(0, 255, 0, 0.25), 0 0 40px rgba(0, 255, 0, 0.4); 
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/*--- Full-bleed Backdrop Rain Canvas Configuration ---*/
+#Matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+}
+
+/*--- Layout Element Stacking Orders Context ---*/
+.navbar,
+.header,
+.features,
+.page-footer {
+    position: relative;
+    z-index: 10;
+}
+
+/*--- Navigation Bar Custom Overrides ---*/
+.navbar {
+    background-color: #050505 !important; 
+    border-bottom: 2px solid var(--matrix-glow) !important; 
+    padding: 15px 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.35);
+}
+
+.navbar-brand {
+    color: var(--matrix-glow) !important; 
+    font-weight: bold;
+    font-family: var(--header-font);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
+}
+
+.nav-link {
+    color: var(--matrix-dim) !important; 
+    font-weight: 500;
+    margin-right: 1em !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--matrix-glow) !important; 
+    text-shadow: 0 0 12px rgba(0, 255, 0, 0.9);
+    background-color: rgba(0, 255, 0, 0.08);
+}
+
+/*--- Hero Presentation Header Block Layout Rules ---*/
+.header {
+    background: transparent !important;
+    padding: 80px 0 40px 0;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Terminal Text Window Box Overlays */
+.description {
+    max-width: 45em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 35px 30px;
+    text-align: center;
+    background-color: var(--matrix-card-bg);
+    border: 1px solid var(--matrix-border);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+    font-family: var(--header-font);
+}
+
+.description h1 {
+    color: var(--matrix-glow);
+    font-size: 2.3rem;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    background-color: var(--matrix-overlay);
+    margin-bottom: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/*--- Dynamic Text Terminal Engine Styles ---*/
+.terminal-wrapper {
+    display: inline-block;
+    position: relative;
+    background-color: var(--matrix-overlay);
+    padding: 6px 12px;
+    border-radius: 2px;
+}
+
+#terminal-text {
+    display: inline;
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-family: var(--matrix-font);
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background-color: var(--matrix-glow);
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: cursorBlink 0.8s infinite steps(2, start);
+    box-shadow: 0 0 8px var(--matrix-glow);
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Interactive Action Buttons Logic */
+.description .btn-outline-success {
+    border: 1px solid var(--matrix-glow) !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    color: var(--matrix-glow) !important;
+    padding: 10px 40px;
+    font-family: var(--matrix-font);
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.description .btn-outline-success:hover {
+    background: var(--matrix-glow) !important;
+    color: #000000 !important;
+    box-shadow: 0 0 25px var(--matrix-glow) !important;
+}
+
+/*--- Column Grid Features Components ---*/
+.features {
+    padding: 40px 0 80px 0;
+    background: transparent !important;
+}
+
+/* Individual Block Card Wrappers */
+.feature-card {
+    background-color: var(--matrix-card-bg);
+    border: 1px solid var(--matrix-border);
+    padding: 30px 25px;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+    border-color: var(--matrix-glow);
+}
+
+.feature-title {
+    color: var(--matrix-bright);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--header-font);
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+}
+
+/* Frame Layout Image Elements Constraints */
+.features img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    border: 1px solid var(--matrix-border);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
+}
+
+.features p {
+    color: var(--matrix-text); 
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.features a {
+    color: var(--matrix-glow);
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.features a:hover {
+    color: var(--matrix-bright);
+    text-shadow: 0 0 8px var(--matrix-glow);
+}
+
+/* Interactive Panel Form Controls Input Fields Styles */
+.features .form-control {
+    border-radius: 0;
+    background-color: #050505;
+    border: 1px solid var(--matrix-border);
+    color: var(--matrix-glow);
+    font-family: var(--matrix-font);
+    padding: 12px;
+}
+
+.features .form-control:focus {
+    background-color: #090909;
+    border-color: var(--matrix-glow);
+    color: var(--matrix-glow);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.45);
+}
+
+.features .btn-success {
+    background-color: #0fb71f;
+    border: 1px solid #489028;
+    color: #ffffff;
+    border-radius: 0;
+    font-family: var(--matrix-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+.features .btn-success:hover {
+    background-color: #111111;
+    border-color: var(--matrix-glow);
+    color: var(--matrix-glow);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+/* Branding Control Node Configurations */
+.built-by-panel h3 {
+    font-size: 1.15rem;
+    color: var(--matrix-bright);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ohm-symbol {
+    max-width: 110px !important;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.4));
+    opacity: 0.85;
+}
+
+/*--- System Layout Footers ---*/
+.page-footer {
+    background-color: #050505;
+    color: var(--matrix-bright);
+    padding: 45px 0 30px 0;
+    border-top: 2px solid var(--matrix-glow);
+    box-shadow: 0 -10px 25px rgba(0, 255, 0, 0.2);
+}
+
+.style-address {
+    font-style: normal;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.footer-copyright {
+    color: var(--matrix-dim);
+    font-size: 0.85rem;
+    padding-top: 5px;
+}
+
+.style-link {
+    color: var(--matrix-glow);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.style-link:hover {
+    color: var(--matrix-bright);
+    text-shadow: 0 0 10px var(--matrix-glow);
+}
+
+/*--- Responsive Structural Media Engine Breakpoints ---*/
+@media (max-width: 768px) {
+    .header { padding: 40px 0; }
+    .description { padding: 25px 20px; width: 95%; }
+    .description h1 { font-size: 1.75rem; }
+    .features { padding-bottom: 40px; }
+    .feature-card { padding: 20px; }
+}
