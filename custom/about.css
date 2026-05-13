@@ -74,6 +74,17 @@ body {
     justify-content: center;
 }
 
+/*--- Article Containers ---*/
+.article-container, .container-dapl {
+    position: relative;
+    z-index: 1;
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
 /* Centered Terminal Text Overlay */
 .description {
     position: absolute; 
