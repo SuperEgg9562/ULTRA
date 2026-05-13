@@ -54,9 +54,9 @@ canvas {
 .container-dapl {
     position: relative;
     z-index: 1;
-    max-width: 36em;
+    max-width: 60em;
     margin: 0 auto;
-    padding: 50px;
+    padding: 40px 20px;
     box-sizing: border-box;
     min-height: 100vh;
 }
