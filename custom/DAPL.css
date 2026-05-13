@@ -1,4 +1,4 @@
-/*--- Core Page Defaults ---*/
+/*--- page ---*/
 html, body {
     margin: 0;
     padding: 0;
@@ -24,34 +24,34 @@ canvas {
     pointer-events: none;
 }
 
-/*--- Navigation Bar ---*/
+/*--- navigation bar ---*/
+/*--- Enhanced Terminal Aesthetic Navigation Bar ---*/
 .navbar {
-    background-color: #050505 !important; 
-    border: 1px solid rgba(8, 245, 8, 0.78); 
+    background-color: #050505 !important;
+    border: 1px solid rgba(8, 245, 8, 0.781);
     position: relative;
     z-index: 2;
     padding: 10px 20px;
 }
 
 .navbar-brand {
-    color: #00ff00 !important; 
+    color: #00ff00 !important;
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
-
 .nav-link {
-    color: #00cc00 !important; 
+    color: #00cc00 !important;
     font-weight: 500;
     margin-right: 1em !important;
     transition: color 0.2s ease-in-out;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #00ff00 !important; 
+    color: #00ff00 !important;
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
 }
 
-/*--- Layout Containers ---*/
+/*--- article container ---*/
 .article-container, .container-dapl {
     position: relative;
     z-index: 1;
@@ -62,6 +62,7 @@ canvas {
     min-height: 100vh;
 }
 
+/*--- article content ---*/
 .description {
     background-color: rgba(12, 12, 12, 0.95);
     padding: 20px;
@@ -69,7 +70,7 @@ canvas {
     width: 100%;
     box-sizing: border-box;
     text-align: left;
-    border: 1px solid rgba(8, 245, 8, 0.78);
+    border: 1px solid rgba(8, 245, 8, 0.781);
     font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
 }
 
@@ -80,27 +81,16 @@ canvas {
     z-index: 1;
 }
 
-/*--- Terminal Typography ---*/
-.description h1, .description h2, .description h3, .description h4 {
-    font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-}
-
+/* Typography */
 .description h1 {
-    color: #00ff00;
-    font-size: 2.2rem;
+    color: #87dc87;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-    border-bottom: 1px dashed rgba(8, 245, 8, 0.78); 
-    padding-bottom: 4px; 
+    font-size: 2rem;
 }
 
 .description h2 {
     color: #87dc87;
-    font-size: 1.6rem;
-    border-bottom: 1px dashed rgba(8, 245, 8, 0.78); 
-    padding-bottom: 4px;
+    font-size: 1.5rem;
 }
 
 .description h3 {
@@ -112,92 +102,59 @@ canvas {
     color: #07b768;
     font-size: 1rem;
     line-height: 1.5;
-    margin: 1em 0;
 }
 
-/* Fixed contrast color issue */
-.description ul, .description ol, .description li {
+/* FIX: Changed from muddy dark green #057442 to glowing matrix green for readability */
+.description ul, .description ol {
+    color: #87dc87;
+    margin-bottom: 1em;
+}
+
+.description li {
     color: #87dc87;
     margin-bottom: 0.4em;
     line-height: 1.5;
 }
 
-.description ul, .description ol {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-left: 1.7em;
+.description h1, .description h2, .description h3, .description h4 {
+    font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-li > ol, li > ul {
-    margin-top: 0;
+/* Specific contrast accent modifications */
+.description h1 {
+    color: #00ff00;
+    font-size: 2.2rem;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781);
+    padding-bottom: 4px;
 }
 
-/*--- Code & Data Blocks ---*/
-pre, code, .sourceCode, figcaption, table, table caption, tbody, td, th, .abstract {
+.description h2 {
+    color: #87dc87;
+    font-size: 1.6rem;
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781);
+    padding-bottom: 4px;
+}
+
+pre, code, .sourceCode {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
-    color: #87dc87; 
-}
-
-code {
-    white-space: pre-wrap;
-    hyphens: manual;
-}
-
-pre {
-    margin: 1em 0;
-    overflow: auto;
-}
-
-pre code, .sourceCode {
-    padding: 0;
-    overflow: visible;
-    overflow-wrap: normal;
-    background-color: transparent;
-}
-
-/*--- Tables & Structural Blocks ---*/
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-table {
-    margin: 1em 0;
-    border-collapse: collapse;
-    width: 100%;
-    font-variant-numeric: lining-nums tabular-nums;
-}
-
-table caption {
-    margin-bottom: 0.75em;
-    text-align: left;
-}
-
-tbody {
-    border-top: 1px solid #1a1a1a;
-    border-bottom: 1px solid #1a1a1a;
-}
-
-th {
-    border-top: 1px solid #1a1a1a;
-    padding: 0.25em 0.5em;
-    text-align: left;
-}
-
-td {
-    padding: 0.125em 0.5em 0.25em 0.5em;
-}
-blockquote {
-    margin: 1em 0 1em 1.7em;
-    padding-left: 1em;
-    border-left: 2px solid #1a1a1a;
     color: #87dc87;
+    padding-bottom: 4px;
 }
 
-/*--- Footer & Extras ---*/
+figcaption, table, table caption, tbody, td, th, .abstract {
+    font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
+    font-size: 90%;
+    letter-spacing: 0.5px;
+    color: #87dc87;
+    padding-bottom: 4px;
+}
+
+/*--- footer ---*/
 .page-footer {
     position: relative;
     z-index: 2;
@@ -211,6 +168,65 @@ blockquote {
     padding: 40px;
 }
 
+/*--- media queries ---*/
+@media (max-width: 991.98px) {
+    .team {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .article-container, .container-dapl {
+        padding: 15px;
+    }
+    .description {
+        padding: 15px;
+        text-align: center;
+    }
+    .description h1 {
+        font-size: 2rem;
+    }
+    .description p {
+        font-size: 1.2rem;
+    }
+    .features {
+        margin: 0;
+    }
+    .team {
+        max-width: 60%;
+    }
+    #demo-modal .btn {
+        min-width: auto;
+    }
+}
+
+/*--- print ---*/
+@media print {
+    html {
+        background-color: #000;
+    }
+    body {
+        background-color: transparent;
+        color: #00cc00;
+        font-size: 12pt;
+    }
+    canvas {
+        display: none;
+    }
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+}
+
+/* General print-friendly content styles */
+p {
+    margin: 1em 0;
+}
+
 a, a:visited {
     color: #00cc00;
 }
@@ -220,6 +236,73 @@ img, svg {
     height: auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.4em;
+}
+
+h5, h6 {
+    font-size: 1em;
+    font-style: italic;
+}
+
+h6 {
+    font-weight: normal;
+}
+
+ol, ul {
+    padding-left: 1.7em;
+    margin-top: 1em;
+}
+
+li > ol, li > ul {
+    margin-top: 0;
+}
+
+blockquote {
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 2px solid #e6e6e6;
+    color: #87dc87;
+}
+
+div.abstract {
+    margin: 2em;
+    text-align: left;
+    font-size: 85%;
+}
+
+div.abstract-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+code {
+    white-space: pre-wrap;
+    font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 85%;
+    hyphens: manual;
+}
+
+pre {
+    margin: 1em 0;
+    overflow: auto;
+    color: #87dc87;
+}
+
+pre code {
+    padding: 0;
+    overflow: visible;
+    overflow-wrap: normal;
+    color: #87dc87;
+}
+
+.sourceCode {
+    background-color: transparent;
+    overflow: visible;
+    color: #87dc87;
+}
+
 hr {
     border: none;
     border-top: 1px solid #1a1a1a;
@@ -227,47 +310,86 @@ hr {
     margin: 1em 0;
 }
 
-.abstract {
-    margin: 2em;
-    text-align: left;
-    font-size: 85%;
+/* FIX: Retained your exact block structure but added safety rules for standard viewports */
+table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    font-variant-numeric: lining-nums tabular-nums;
+    color: #87dc87;
 }
 
-.abstract-title {
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5em;
+table caption {
+    margin-bottom: 0.75em;
+    color: #87dc87;
 }
 
-#TOC ul { padding-left: 1.3em; }
-#TOC > ul { padding-left: 0; }
-#TOC li, #TOC a:not(:hover) { text-decoration: none; color: #87dc87; }
-span.smallcaps { font-variant: small-caps; }
-div.columns { display: flex; gap: min(4vw, 1.5em); }
-div.column { flex: auto; overflow-x: auto; }
-div.hanging-indent { margin-left: 1.5em; text-indent: -1.5em; }
-ul.task-list[class] { list-style: none; }
-ul.task-list li input[type="checkbox"] { font-size: inherit; width: 0.8em; margin: 0 0.8em 0.2em -1.6em; vertical-align: middle; }
-
-/*--- Responsive Media Queries ---*/
-@media (max-width: 991.98px) {
-    .team { padding: 0 15px; }
+tbody {
+    margin-top: 0.5em;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    color: #87dc87;
 }
 
-@media (max-width: 575.98px) {
-    .article-container, .container-dapl { padding: 15px; }
-    .description { padding: 15px; text-align: left; } /* Fixed mobile alignment */
-    .description h1 { font-size: 1.8rem; }
-    .description p { font-size: 1rem; } /* Fixed mobile blowout */
-    .features { margin: 0; }
-    .team { max-width: 100%; } /* Prevents tiny cramped columns */
+th {
+    border-top: 1px solid #1a1a1a;
+    padding: 0.25em 0.5em;
+    color: #87dc87;
 }
 
-/*--- Print Stylesheet ---*/
-@media print {
-    html { background-color: #000; }
-    body { background-color: transparent; color: #00cc00; font-size: 12pt; }
-    canvas { display: none; }
-    p, h2, h3 { orphans: 3; widows: 3; }
-    h2, h3, h4 { page-break-after: avoid; }
+td {
+    padding: 0.125em 0.5em 0.25em 0.5em;
+    color: #87dc87;
+}
+
+#TOC li {
+    list-style: none;
+    color: #87dc87;
+}
+
+#TOC ul {
+    padding-left: 1.3em;
+    color: #87dc87;
+}
+
+#TOC > ul {
+    padding-left: 0;
+    color: #87dc87;
+}
+
+#TOC a:not(:hover) {
+    text-decoration: none;
+    color: #87dc87;
+}
+
+span.smallcaps {
+    font-variant: small-caps;
+}
+
+div.columns {
+    display: flex;
+    gap: min(4vw, 1.5em);
+}
+
+div.column {
+    flex: auto;
+    overflow-x: auto;
+}
+
+div.hanging-indent {
+    margin-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+ul.task-list[class] {
+    list-style: none;
+}
+
+ul.task-list li input[type="checkbox"] {
+    font-size: inherit;
+    width: 0.8em;
+    margin: 0 0.8em 0.2em -1.6em;
+    vertical-align: middle;
 }
