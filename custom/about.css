@@ -1,326 +1,120 @@
-/*--- Core Page Config & Theme Variables ---*/
-:root {
-    --matrix-bg: #000000;
-    --matrix-card-bg: rgba(5, 5, 5, 0.90);
-    --matrix-overlay: rgba(34, 34, 34, 0.50);
-    --matrix-dim: #00aa00;
-    --matrix-glow: #00ff00;
-    --matrix-bright: #87dc87;
-    --matrix-text: #a1ffa1;
-    --matrix-border: rgba(0, 204, 0, 0.3);
-    --matrix-font: 'Space Mono', 'Share Tech Mono', 'Courier New', monospace;
-    --header-font: 'Orbitron', 'Share Tech Mono', sans-serif;
+/*--- Global Full-Bleed Canvas Layers ---*/
+#Matrix {
+    position: fixed; /* Fixes canvas element to viewport across page scrolls */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Pushes matrix stream behind navigation, header, cards, and footer */
+    display: block;
+    pointer-events: none; /* Allows user clicks to pass through canvas to elements below */
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    background-color: var(--matrix-bg);
-    border: 2px solid var(--matrix-glow);
-    color: var(--matrix-text);
-    hyphens: auto;
-    overflow-wrap: break-word;
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
-    font-family: var(--matrix-font);
-}
-
-/*--- Bootstrap Navigation Bar Overrides ---*/
-.navbar {
-    background-color: #050505 !important; 
-    border: 2px solid var(--matrix-glow); 
+/*--- Element Layer Stacking Context Resets ---*/
+.navbar,
+.header,
+.article-container,
+.page-footer {
     position: relative;
-    z-index: 10;
-    padding: 10px 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+    z-index: 2; /* Forces content sections to stack neatly on top of the fixed background canvas */
 }
 
-.navbar-brand {
-    color: var(--matrix-glow) !important; 
-    font-weight: bold;
-    font-family: var(--header-font);
-    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6); 
-}
-
-.nav-link {
-    color: var(--matrix-dim) !important; 
-    font-weight: 500;
-    margin-right: 1em !important;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: var(--matrix-glow) !important; 
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-    background-color: rgba(0, 255, 0, 0.05);
-}
-
-/*--- Responsive Header & Hero Section ---*/
+/*--- Responsive Header & Hero Adjustments ---*/
 .header {
-    background: var(--matrix-bg);
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    margin: 0;
-    width: 100%;
-    padding: 0;
-    min-height: 70vh; /* Prevents container collapse */
+    background: transparent !important; /* Removes background color to expose the matrix rain */
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 0;
 }
 
-/*--- Article Containers ---*/
-.article-container, .container-dapl {
+/*--- Article & Content Layout Engine ---*/
+.article-container {
+    min-height: auto; 
+    padding-bottom: 80px;
+}
+
+.background {
+    background: transparent !important; /* Removes block fills to let digital rain stream smoothly behind cards */
+    padding: 2em 0;
+    border-top: none;
+}
+
+/*--- Terminal Animation Mechanics ---*/
+.terminal-wrapper {
+    display: inline;
     position: relative;
-    z-index: 1;
-    max-width: 60em;
-    margin: 0 auto;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    min-height: 100vh;
 }
 
-/* Centered Terminal Text Overlay */
-.description {
-    position: absolute; 
-    max-width: 45em;
-    width: 90%;
-    margin: 20px auto;
-    padding: 30px;
-    text-align: center;
-    background-color: var(--matrix-card-bg);
-    border: 1px solid var(--matrix-border);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
-    font-family: var(--header-font);
-    z-index: 3;
-}
-
-.description h1 {
-    color: var(--matrix-glow);
-    font-size: 2.5rem;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    background-color: var(--matrix-overlay);
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.description h2 {
-    color: var(--matrix-bright);
-    font-size: 1.6rem;
-    border-bottom: 1px dashed var(--matrix-border); 
-    padding-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.description p {
+#terminal-text {
+    display: inline;
     color: #ffffff;
     font-size: 1.2rem;
     line-height: 1.6;
     background-color: var(--matrix-overlay);
-    padding: 10px;
+    padding: 2px 5px;
 }
 
-/* Terminal Interactive Buttons */
-.description button {
-    border: 1px solid var(--matrix-bright);
-    background: #088020;
-    border-radius: 0;
-    color: #fff;
-    padding: 10px 24px;
-    font-family: var(--matrix-font);
-    text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2rem;
+    background-color: var(--matrix-glow);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: cursorBlink 0.8s infinite steps(2, start);
 }
 
-.description button:hover {
-    border: 1px solid #fff;
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 15px #fff;
+@keyframes cursorBlink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
-/*--- Grid Feature Section ---*/
-.features {
-    margin: 0;
-    padding: 3em 1em;
-    position: relative;
-    background-color: var(--matrix-bg);
-    background-size: cover;
-    background-position: center;
-}
-
-.feature-title {
-    color: var(--matrix-bright);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: var(--header-font);
-    letter-spacing: 1px;
-}
-
-/* Fluid Massive Image Constraints */
-.features img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto 16px;
-    border: 1px solid var(--matrix-border);
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
-    background-color: rgba(0, 255, 0, 0.02);
-}
-
-.features p, 
-.features h3 {
-    color: var(--matrix-text); 
-    font-size: 1.0rem;
-    margin-top: 15px;
-    text-align: center;
-}
-
-/* Matrix Form Inputs */
-.features .form-control,
-.features input {
-    border-radius: 0;
-    background-color: #050505;
-    border: 1px solid var(--matrix-border);
-    color: var(--matrix-glow);
-    font-family: var(--matrix-font);
-}
-
-.features .form-control:focus {
-    background-color: #0a0a0a;
-    border-color: var(--matrix-glow);
-    color: var(--matrix-glow);
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
-}
-
-.features .btn {
-    background-color: #0fb71f;
-    border: 1px solid #589b37;
-    color: #fff;
-    border-radius: 0;
-    margin-top: 20px;
-    font-family: var(--matrix-font);
-    text-transform: uppercase;
-    width: 100%;
-    transition: all 0.2s ease-in-out;
-}
-
-.features .btn:hover {
-    background-color: #222;
-    border: 1px solid var(--matrix-glow);
-    color: var(--matrix-glow);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
-
-/*--- Team Matrix Grid Section ---*/
-.background {
-    background: var(--matrix-bg);
-    padding: 4em 0;
-    border-top: 1px solid var(--matrix-border);
-}
-
-.team {
-    color: var(--matrix-text); 
-    padding: 0 10%;
-}
-
-/* Modernized Grid over deprecated CSS column-count */
+/*--- Team Card Modern Grid Context ---*/
 .team .card-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    justify-content: center;
 }
 
 .team .card {
-    background: rgba(5, 5, 5, 0.8);
+    background: var(--matrix-card-bg); /* Opaque dark tile masks the dense matrix lines for easier reading */
     border: 1px solid var(--matrix-border);
-    padding: 20px;
+    padding: 30px 20px;
     border-radius: 0;
+    backdrop-filter: blur(2px); /* Softens matrix background directly behind card layout boundaries */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team .card-title {
+.team .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+    border-color: var(--matrix-glow);
+}
+
+/*--- Profile Picture Render Engine ---*/
+.team .card-img-top.rounded-circle {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid var(--matrix-border);
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/*--- Footer Cleanup ---*/
+.style-link {
     color: var(--matrix-glow);
-    font-family: var(--header-font);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    text-decoration: none;
 }
-
-/*--- System Footers ---*/
-.page-footer {
-    background-color: #050505;
+.style-link:hover {
     color: var(--matrix-bright);
-    padding: 40px 0 20px;
-    border-top: 2px solid var(--matrix-border);
-}
-
-.footer-copyright {
-    color: var(--matrix-dim);
-    padding: 20px 0;
-    font-size: 0.9rem;
-}
-
-/*--- Bootstrap-Aligned Responsive Engine ---*/
-@media (max-width: 991.98px) {
-    .team {
-        padding: 0 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        min-height: auto;
-        padding: 40px 0;
-    }
-
-    .description {
-        padding: 20px;
-        text-align: left; 
-    }
-    
-    .description h1 {
-        font-size: 1.8rem;
-    }
-    
-    .description p {
-        font-size: 1rem;
-    }
-    
-    .team {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    #demo-modal .btn {
-        min-width: auto;
-    }
-}
-
-/*--- Access Modal Overrides ---*/
-.modal-content {
-    background-color: #050505;
-    border: 1px solid var(--matrix-glow);
-    border-radius: 0;
-    color: var(--matrix-text);
-    font-family: var(--matrix-font);
-}
-
-.modal-header {
-    border-bottom: 1px dashed var(--matrix-border);
-    color: var(--matrix-glow);
-    font-family: var(--header-font);
-}
-
-.modal-footer {
-    border-top: 1px dashed var(--matrix-border);
+    text-shadow: 0 0 8px var(--matrix-glow);
 }

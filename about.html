@@ -1,87 +1,123 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us | Decypher The Universe</title>
+    <!-- Resource Hints & Typography -->
     <link rel="preconnect" href="googleapis.com">
     <link rel="preconnect" href="gstatic.com" crossorigin>
     <link href="googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="custom/about.css">
+    <!-- Component Stylesheets -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="custom/about.css">
 </head>
 <body>
 
+    <!-- Global Matrix Rain Canvas Background -->
+    <canvas id="Matrix">Sorry, your browser doesn't support the canvas element.</canvas>
+
+    <!-- Main Navigation Bar -->
     <nav class="navbar navbar-expand-md">
-     <a class="navbar-brand" href="#">&#9886;Decypher The Universe &#9775; &#9887;</a>
-      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-       <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="DAPL.html">DAPL</a></li>
-        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-        </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">⚞Decypher The Universe ☯ ⚟</a>
+            <button class="navbar-toggler navbar-dark border-1" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="DAPL.html">DAPL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                </ul>
+            </div>
         </div>
-        </nav>
-<header class="page-header header container-fluid">
-<canvas id="Matrix">
-Sorry, your browser doesn't support the canvas element.
-</canvas>
-<div class="description">
-<h1>About Us</h1>
-<p>We are a group of like minded souls with a deep 
-understanding that there is so much to our world and 
-universe that remains hidden or more likely deliberately 
-obstructed from us. We seek to unravel those mysteries and 
-make them available to all.</p>
-              
-<div class="article-container">
-<div class="background">
-<div class="container team">          
-<div class="row">
-<div class="card col-lg-3 col-md-3 col-sm-3 text-center">
-<img class="card-img-top rounded-circle" src="images/Hack.jpg" alt="Card image">
-<div class="card-body">
-<h4 class="card-title">ULTRA</h4>
-<p class="card-text">Tech XTRAORDINAIRE</p>
-</div>
-</div>
-<div class="card col-lg-3 col-md-3 col-sm-3 text-center">
-                    <img class="card-img-top rounded-circle" src="images/Hack.jpg" alt="Card image">
-<div class="card-body">
-            <h4 class="card-title">D-Block</h4>
-        <p class="card-text">Spiritual ENTREPRENEUR</p>
-</div>
-</div>
-<div class="card col-lg-3 col-md-3 col-sm-3 text-center">
-        <img class="card-img-top rounded-circle" src="images/Hack.jpg" alt="Card image">
-<div class="card-body">
-                <h4 class="card-title">Sugar Daddy Logan</h4>
-                    <p class="card-text">THE BANK</p>
-</div>
-</div>
-</div>
-</div>
-</div>                   
-</div>
-</div> 
- </header> 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="footer-copyright text-center">
-        © 2026 Copyright: https://superegg9562.github.io/ULTRA/
-      </div>
-    </div>
-  </footer>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-  <script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="custom/main.js"></script>
-  <script src="custom/index.js"></script>
-    </body>
+    </nav>
+
+    <!-- Hero Header Component -->
+    <header class="page-header header">
+        <div class="description">
+            <h1>About Us</h1>
+            <!-- Interactive Animated Output Node -->
+            <div class="terminal-wrapper">
+                <p id="terminal-text" data-text="We are a group of like-minded souls with a deep understanding that there is so much to our world and universe that remains hidden or more likely deliberately obstructed from us. We seek to unravel those mysteries and make them available to all."></p>
+                <span class="terminal-cursor"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Engine / Team Section Component -->
+    <main class="article-container">
+        <section class="background">
+            <div class="container team">
+                <div class="card-columns">
+                    
+                    <!-- Team Member 1 -->
+                    <article class="card text-center">
+                        <img class="card-img-top rounded-circle mx-auto" src="images/Hack.jpg" alt="ULTRA Profile picture">
+                        <div class="card-body px-0 pb-0">
+                            <h4 class="card-title">ULTRA</h4>
+                            <p class="card-text mb-0">Tech XTRAORDINAIRE</p>
+                        </div>
+                    </article>
+
+                    <!-- Team Member 2 -->
+                    <article class="card text-center">
+                        <img class="card-img-top rounded-circle mx-auto" src="images/Hack.jpg" alt="D-Block Profile picture">
+                        <div class="card-body px-0 pb-0">
+                            <h4 class="card-title">D-Block</h4>
+                            <p class="card-text mb-0">Spiritual ENTREPRENEUR</p>
+                        </div>
+                    </article>
+
+                    <!-- Team Member 3 -->
+                    <article class="card text-center">
+                        <img class="card-img-top rounded-circle mx-auto" src="images/Hack.jpg" alt="Sugar Daddy Logan Profile picture">
+                        <div class="card-body px-0 pb-0">
+                            <h4 class="card-title">Sugar Daddy Logan</h4>
+                            <div class="card-body px-0 pb-0">
+                            <p class="card-text mb-0">THE BANK</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- System Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-copyright text-center">
+                © 2026 Copyright: <a href="github.io" class="text-decoration-none style-link">github.io</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dependency Scripts Stack -->
+    <script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script defer src="jsdelivr.net"></script>
+    <script src="custom/main.js"></script>
+    <script src="custom/index.js"></script>
+    <!-- Built-in Terminal Typing Controller Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const element = document.getElementById("terminal-text");
+            const rawText = element.getAttribute("data-text");
+            let index = 0;
+
+            function typeEngine() {
+                if (index < rawText.length) {
+                    element.textContent += rawText.charAt(index);
+                    index++;
+                    setTimeout(typeEngine, 35); // Controls typing speed in milliseconds
+                }
+            }
+            typeEngine();
+        });
+    </script>
+</body>
 </html>
