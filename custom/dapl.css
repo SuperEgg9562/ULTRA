@@ -103,19 +103,19 @@ canvas {
 }
 
 .description p {
-    color: #00cc00;
+    color: #07b768;
     font-size: 1rem;
     line-height: 1.5;
 }
 
 .description ul,
 .description ol {
-    color: #87dc87;
+    color: #057442;
     margin-bottom: 1em;
 }
 
 .description li {
-    color: #87dc87;
+    color: #057442;
     margin-bottom: 0.4em;
     line-height: 1.5;
 }
