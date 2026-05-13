@@ -27,6 +27,7 @@ body {
 }
 
 /* Full-screen Matrix background canvas */
+/*
 canvas {
     position: fixed;
     inset: 0;
@@ -38,7 +39,7 @@ canvas {
     z-index: 0;
     pointer-events: none;
 }
-
+*/
 /*--- Bootstrap Navigation Bar Overrides ---*/
 .navbar {
     background-color: var(--matrix-dark-bg) !important; 
