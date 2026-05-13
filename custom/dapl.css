@@ -75,6 +75,7 @@ canvas {
     box-sizing: border-box;
     text-align: left;
     border: 1px solid rgba(0, 204, 0, 0.15);
+    font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
 }
 
 .Matrix {
