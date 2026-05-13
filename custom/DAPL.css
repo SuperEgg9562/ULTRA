@@ -27,32 +27,35 @@ canvas {
 /*--- navigation bar ---*/
 /*--- Enhanced Terminal Aesthetic Navigation Bar ---*/
 .navbar {
-    background-color: #050505 !important;
-    border: 1px solid rgba(8, 245, 8, 0.781);
+    background-color: #050505 !important; 
+    border: 1px solid rgba(8, 245, 8, 0.781); 
     position: relative;
     z-index: 2;
     padding: 10px 20px;
 }
 
 .navbar-brand {
-    color: #00ff00 !important;
+    color: #00ff00 !important; 
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
 }
 .nav-link {
-    color: #00cc00 !important;
+    color: #00cc00 !important; 
     font-weight: 500;
     margin-right: 1em !important;
     transition: color 0.2s ease-in-out;
 }
 
-.nav-link:hover, .nav-link:focus {
-    color: #00ff00 !important;
+.nav-link:hover,
+.nav-link:focus {
+    color: #00ff00 !important; 
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
 }
 
+
 /*--- article container ---*/
-.article-container, .container-dapl {
+.article-container,
+.container-dapl {
     position: relative;
     z-index: 1;
     max-width: 60em;
@@ -104,53 +107,52 @@ canvas {
     line-height: 1.5;
 }
 
-/* FIX: Changed from muddy dark green #057442 to glowing matrix green for readability */
-.description ul, .description ol {
-    color: #87dc87;
+.description ul,
+.description ol {
+    color: #057442;
     margin-bottom: 1em;
 }
 
 .description li {
-    color: #87dc87;
+    color: #057442;
     margin-bottom: 0.4em;
     line-height: 1.5;
 }
-
-.description h1, .description h2, .description h3, .description h4 {
+.description h1,
+.description h2,
+.description h3,
+.description h4 {
     font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
 }
-
 /* Specific contrast accent modifications */
 .description h1 {
     color: #00ff00;
     font-size: 2.2rem;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-    border-bottom: 1px dashed rgba(8, 245, 8, 0.781);
-    padding-bottom: 4px;
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781); 
+    padding-bottom: 4px; 
 }
 
 .description h2 {
     color: #87dc87;
     font-size: 1.6rem;
-    border-bottom: 1px dashed rgba(8, 245, 8, 0.781);
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781); 
     padding-bottom: 4px;
 }
-
 pre, code, .sourceCode {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
-    color: #87dc87;
+    color: #87dc87; 
     padding-bottom: 4px;
 }
-
-figcaption, table, table caption, tbody, td, th, .abstract {
+figcaption, table,table caption, tbody, td, th, .abstract {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
-    color: #87dc87;
+    color: #87dc87; 
     padding-bottom: 4px;
 }
 
@@ -176,25 +178,32 @@ figcaption, table, table caption, tbody, td, th, .abstract {
 }
 
 @media (max-width: 575.98px) {
-    .article-container, .container-dapl {
+    .article-container,
+    .container-dapl {
         padding: 15px;
     }
+
     .description {
         padding: 15px;
         text-align: center;
     }
+
     .description h1 {
         font-size: 2rem;
     }
+
     .description p {
         font-size: 1.2rem;
     }
+
     .features {
         margin: 0;
     }
+
     .team {
         max-width: 60%;
     }
+
     #demo-modal .btn {
         min-width: auto;
     }
@@ -202,21 +211,22 @@ figcaption, table, table caption, tbody, td, th, .abstract {
 
 /*--- print ---*/
 @media print {
-    html {
-        background-color: #000;
-    }
+    html { background-color: #000; }
     body {
         background-color: transparent;
         color: #00cc00;
         font-size: 12pt;
     }
+
     canvas {
         display: none;
     }
+
     p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
+
     h2, h3, h4 {
         page-break-after: avoid;
     }
@@ -227,11 +237,13 @@ p {
     margin: 1em 0;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: #00cc00;
 }
 
-img, svg {
+img,
+svg {
     max-width: 100%;
     height: auto;
 }
@@ -254,7 +266,8 @@ ol, ul {
     margin-top: 1em;
 }
 
-li > ol, li > ul {
+li > ol,
+li > ul {
     margin-top: 0;
 }
 
@@ -262,7 +275,7 @@ blockquote {
     margin: 1em 0 1em 1.7em;
     padding-left: 1em;
     border-left: 2px solid #e6e6e6;
-    color: #87dc87;
+    color: #87dc87;;
 }
 
 div.abstract {
@@ -310,7 +323,6 @@ hr {
     margin: 1em 0;
 }
 
-/* FIX: Retained your exact block structure but added safety rules for standard viewports */
 table {
     margin: 1em 0;
     border-collapse: collapse;
