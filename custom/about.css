@@ -11,8 +11,6 @@
     --matrix-font: 'Space Mono', 'Courier New', monospace;
     --header-font: 'Orbitron', sans-serif;
 }
-
-/*--- Fullscreen Frame Box Adjustments ---*/
 html,
 body {
     margin: 0;
@@ -26,8 +24,6 @@ body {
     font-family: var(--matrix-font);
     position: relative;
 }
-
-/*--- Global Edge Border & Vignette Ambient Glow Filters ---*/
 .terminal-vignette-glow {
     position: fixed;
     top: 0;
@@ -39,8 +35,6 @@ body {
     pointer-events: none;
     z-index: 9999;
 }
-
-/*--- Global Full-Bleed Canvas Layers ---*/
 #Matrix {
     position: absolute;
     top: 0;
@@ -51,8 +45,6 @@ body {
     display: block;
     pointer-events: none;
 }
-
-/*--- Content Layer Hierarchy Overrides ---*/
 .navbar,
 .header,
 .article-container,
@@ -60,37 +52,30 @@ body {
     position: relative;
     z-index: 10;
 }
-
-/*--- Fixed Bootstrap Navigation Bar Overrides ---*/
 .navbar {
     background-color: #050505 !important; 
     border-bottom: 2px solid var(--matrix-glow) !important; 
     padding: 15px 20px;
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.35);
 }
-
 .navbar-brand {
     color: var(--matrix-glow) !important; 
     font-weight: bold;
     font-family: var(--header-font);
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
 }
-
 .nav-link {
     color: var(--matrix-dim) !important; 
     font-weight: 500;
     margin-right: 1em !important;
     transition: all 0.2s ease-in-out;
 }
-
 .nav-link:hover,
 .nav-link:focus {
     color: var(--matrix-glow) !important; 
     text-shadow: 0 0 12px rgba(0, 255, 0, 0.9);
     background-color: rgba(0, 255, 0, 0.08);
 }
-
-/*--- Responsive Header & Hero Layout Engine ---*/
 .header {
     background: transparent !important;
     min-height: 50vh;
@@ -99,8 +84,6 @@ body {
     justify-content: center;
     padding: 60px 0 20px 0;
 }
-
-/*--- Centered Terminal Content Frame Box Overlays ---*/
 .description {
     max-width: 45em;
     width: 90%;
@@ -112,7 +95,6 @@ body {
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
     font-family: var(--header-font);
 }
-
 .description h1 {
     color: var(--matrix-glow);
     font-size: 2.5rem;
@@ -122,13 +104,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
-/*--- Dynamic Text Terminal Layout Mechanics ---*/
 .terminal-wrapper {
     display: inline;
     position: relative;
 }
-
 #terminal-text {
     display: inline;
     color: #ffffff;
@@ -138,7 +117,6 @@ body {
     padding: 2px 5px;
     font-family: var(--matrix-font);
 }
-
 .terminal-cursor {
     display: inline-block;
     width: 10px;
@@ -149,33 +127,26 @@ body {
     animation: cursorBlink 0.8s infinite steps(2, start);
     box-shadow: 0 0 8px var(--matrix-glow);
 }
-
 @keyframes cursorBlink {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
-
-/*--- Team Matrix Grid Layout Section Rules ---*/
 .article-container {
     padding-bottom: 60px;
 }
-
 .background {
     background: transparent !important;
     padding: 2em 0;
 }
-
 .team {
     padding: 0 10%;
 }
-
 .team .card-columns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     justify-content: center;
 }
-
 .team .card {
     background: var(--matrix-card-bg);
     border: 1px solid var(--matrix-border);
@@ -189,13 +160,11 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .team .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
     border-color: var(--matrix-glow);
 }
-
 .team .card-title {
     color: var(--matrix-glow);
     font-family: var(--header-font);
@@ -204,13 +173,10 @@ body {
     text-transform: uppercase;
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
-
 .team .card-text {
     color: var(--matrix-text);
     font-family: var(--matrix-font);
 }
-
-/*--- Profile Picture Render Constraints ---*/
 .team .card-img-top.rounded-circle {
     width: 130px;
     height: 130px;
@@ -219,8 +185,6 @@ body {
     margin-bottom: 15px;
     box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
 }
-
-/*--- System Layout Footers ---*/
 .page-footer {
     background-color: #050505;
     color: var(--matrix-bright);
@@ -228,28 +192,22 @@ body {
     border-top: 2px solid var(--matrix-glow);
     box-shadow: 0 -10px 25px rgba(0, 255, 0, 0.15);
 }
-
 .footer-copyright {
     color: var(--matrix-dim);
     font-size: 0.9rem;
 }
-
 .style-link {
     color: var(--matrix-glow);
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
-
 .style-link:hover {
     color: var(--matrix-bright);
     text-shadow: 0 0 10px var(--matrix-glow);
 }
-
-/*--- Responsive Media Engine Breakpoints ---*/
 @media (max-width: 991.98px) {
     .team { padding: 0 30px; }
 }
-
 @media (max-width: 768px) {
     .header { padding: 30px 0; }
     .description { padding: 20px; text-align: center; }
