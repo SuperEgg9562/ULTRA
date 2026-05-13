@@ -140,18 +140,19 @@ canvas {
     border-bottom: 1px dashed rgba(0, 204, 0, 0.2); 
     padding-bottom: 4px;
 }
-figcaption, table,table caption, tbody, td, th,.abstract {
-    font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
-    font-size: 90%;
-    letter-spacing: 0.5px;
-    color: #87dc87;
-}
 code, pre, .sourceCode {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
     color: #87dc87;
 }
+figcaption, table,table caption, tbody, td, th,.abstract {
+    font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
+    font-size: 90%;
+    letter-spacing: 0.5px;
+    color: #87dc87;
+}
+
 /*--- footer ---*/
 .page-footer {
     position: relative;
