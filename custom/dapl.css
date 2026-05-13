@@ -153,8 +153,7 @@ figcaption, table,table caption, tbody, td, th, .abstract {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
-    color: #87dc87;
-    border: 1px dashed rgba(8, 245, 8, 0.781); 
+    color: #87dc87; 
     padding-bottom: 4px;
 }
 
