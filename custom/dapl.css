@@ -275,7 +275,7 @@ blockquote {
     margin: 1em 0 1em 1.7em;
     padding-left: 1em;
     border-left: 2px solid #e6e6e6;
-    color: rgba(85, 219, 77, 0.646);
+    color: #87dc87;;
 }
 
 div.abstract {
@@ -300,17 +300,20 @@ code {
 pre {
     margin: 1em 0;
     overflow: auto;
+    color: #87dc87;
 }
 
 pre code {
     padding: 0;
     overflow: visible;
     overflow-wrap: normal;
+    color: #87dc87;
 }
 
 .sourceCode {
     background-color: transparent;
     overflow: visible;
+    color: #87dc87;
 }
 
 hr {
