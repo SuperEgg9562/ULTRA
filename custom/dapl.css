@@ -176,11 +176,11 @@ canvas {
 }
  @media print {
       html {
-        background-color: white;
+        background-color: black;
       }
       body {
         background-color: transparent;
-        color: black;
+        color: #00cc00;
         font-size: 12pt;
       }
       p, h2, h3 {
@@ -195,10 +195,10 @@ canvas {
       margin: 1em 0;
     }
     a {
-      color: #1a1a1a;
+      color: #00cc00;
     }
     a:visited {
-      color: #1a1a1a;
+      color: #00cc00;
     }
     img {
       max-width: 100%;
@@ -228,7 +228,7 @@ canvas {
       margin: 1em 0 1em 1.7em;
       padding-left: 1em;
       border-left: 2px solid #e6e6e6;
-      color: #606060;
+      color: #00cc0079;
     }
     div.abstract {
       margin: 2em 2em 2em 2em;
