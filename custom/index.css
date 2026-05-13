@@ -12,7 +12,7 @@
     --header-font: 'Orbitron', sans-serif;
 }
 
-/*--- Full-bleed Structural Context Containers ---*/
+
 html,
 body {
     margin: 0;
@@ -25,7 +25,7 @@ body {
     position: relative;
 }
 
-/*--- Global Outer Monitor Screen Edge Glow Layers ---*/
+
 .terminal-vignette-glow {
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ body {
     z-index: 9999;
 }
 
-/*--- Full-bleed Backdrop Rain Canvas Configuration ---*/
+
 #Matrix {
     position: absolute;
     top: 0;
@@ -50,7 +50,7 @@ body {
     pointer-events: none;
 }
 
-/*--- Layout Element Stacking Orders Context ---*/
+
 .navbar,
 .header,
 .features,
@@ -59,7 +59,7 @@ body {
     z-index: 10;
 }
 
-/*--- Navigation Bar Custom Overrides ---*/
+
 .navbar {
     background-color: #050505 !important; 
     border-bottom: 2px solid var(--matrix-glow) !important; 
@@ -88,7 +88,7 @@ body {
     background-color: rgba(0, 255, 0, 0.08);
 }
 
-/*--- Hero Presentation Header Block Layout Rules ---*/
+
 .header {
     background: transparent !important;
     padding: 80px 0 40px 0;
@@ -98,7 +98,7 @@ body {
     justify-content: center;
 }
 
-/* Terminal Text Window Box Overlays */
+
 .description {
     max-width: 45em;
     width: 90%;
@@ -121,7 +121,7 @@ body {
     letter-spacing: 2px;
 }
 
-/*--- Dynamic Text Terminal Engine Styles ---*/
+
 .terminal-wrapper {
     display: inline-block;
     position: relative;
@@ -154,7 +154,7 @@ body {
     50% { opacity: 1; }
 }
 
-/* Interactive Action Buttons Logic */
+
 .description .btn-outline-success {
     border: 1px solid var(--matrix-glow) !important;
     background: transparent !important;
@@ -174,13 +174,12 @@ body {
     box-shadow: 0 0 25px var(--matrix-glow) !important;
 }
 
-/*--- Column Grid Features Components ---*/
 .features {
     padding: 40px 0 80px 0;
     background: transparent !important;
 }
 
-/* Individual Block Card Wrappers */
+
 .feature-card {
     background-color: var(--matrix-card-bg);
     border: 1px solid var(--matrix-border);
@@ -209,7 +208,6 @@ body {
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
 }
 
-/* Frame Layout Image Elements Constraints */
 .features img {
     display: block;
     max-width: 100%;
@@ -239,7 +237,7 @@ body {
     text-shadow: 0 0 8px var(--matrix-glow);
 }
 
-/* Interactive Panel Form Controls Input Fields Styles */
+
 .features .form-control {
     border-radius: 0;
     background-color: #050505;
@@ -276,7 +274,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
 }
 
-/* Branding Control Node Configurations */
+
 .built-by-panel h3 {
     font-size: 1.15rem;
     color: var(--matrix-bright);
@@ -290,7 +288,6 @@ body {
     opacity: 0.85;
 }
 
-/*--- System Layout Footers ---*/
 .page-footer {
     background-color: #050505;
     color: var(--matrix-bright);
@@ -322,7 +319,6 @@ body {
     text-shadow: 0 0 10px var(--matrix-glow);
 }
 
-/*--- Responsive Structural Media Engine Breakpoints ---*/
 @media (max-width: 768px) {
     .header { padding: 40px 0; }
     .description { padding: 25px 20px; width: 95%; }
@@ -358,8 +354,6 @@ body {
     }
 }
 
-
-/*--- Interactive Neon Hyperlink Targets ---*/
 .features a,
 .footer-copyright a {
     color: var(--matrix-glow);
@@ -370,7 +364,6 @@ body {
     transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
 }
 
-/* Neon underline baseline state configuration */
 .features a::after,
 .footer-copyright a::after {
     content: '';
@@ -386,7 +379,6 @@ body {
     transition: transform 0.25s ease-out;
 }
 
-/* Neon activation triggers on hover states */
 .features a:hover,
 .footer-copyright a:hover {
     color: var(--matrix-bright);
