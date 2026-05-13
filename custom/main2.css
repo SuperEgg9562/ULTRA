@@ -16,32 +16,66 @@ html,
 body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: var(--matrix-bg);
-    border: 2px solid var(--matrix-glow);
     color: var(--matrix-text);
     hyphens: auto;
     overflow-wrap: break-word;
     text-rendering: optimizeLegibility;
     font-kerning: normal;
     font-family: var(--matrix-font);
+    position: relative;
 }
 
-/*--- Bootstrap Navigation Bar Overrides ---*/
-.navbar {
-    background-color: #050505 !important; 
-    border: 2px solid var(--matrix-glow); 
+
+.terminal-vignette-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: 4px solid var(--matrix-glow);
+    box-shadow: inset 0 0 100px rgba(0, 255, 0, 0.25), 0 0 40px rgba(0, 255, 0, 0.4); 
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+#Matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+}
+
+
+.navbar,
+.header,
+.features,
+.page-footer {
     position: relative;
     z-index: 10;
-    padding: 10px 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+}
+
+
+.navbar {
+    background-color: #050505 !important; 
+    border-bottom: 2px solid var(--matrix-glow) !important; 
+    position: relative;
+    z-index: 20;
+    padding: 15px 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.35);
 }
 
 .navbar-brand {
     color: var(--matrix-glow) !important; 
     font-weight: bold;
     font-family: var(--header-font);
-    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6); 
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
 }
 
 .nav-link {
@@ -54,108 +88,134 @@ body {
 .nav-link:hover,
 .nav-link:focus {
     color: var(--matrix-glow) !important; 
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-    background-color: rgba(0, 255, 0, 0.05);
+    text-shadow: 0 0 12px rgba(0, 255, 0, 0.9);
+    background-color: rgba(0, 255, 0, 0.08);
 }
 
-/*--- Responsive Header & Hero Section ---*/
+
 .header {
-    background: var(--matrix-bg);
+    background: transparent !important;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
     position: relative;
     margin: 0;
     width: 100%;
-    padding: 0;
-    min-height: 70vh; /* Prevents container collapse */
+    padding: 60px 0;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Centered Terminal Text Overlay */
+
 .description {
-    position: absolute; 
     max-width: 45em;
     width: 90%;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 30px;
     text-align: center;
     background-color: var(--matrix-card-bg);
     border: 1px solid var(--matrix-border);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
     font-family: var(--header-font);
-    z-index: 3;
 }
 
 .description h1 {
     color: var(--matrix-glow);
     font-size: 2.5rem;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
     background-color: var(--matrix-overlay);
     margin-bottom: 0.5em;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.description h2 {
-    color: var(--matrix-bright);
-    font-size: 1.6rem;
-    border-bottom: 1px dashed var(--matrix-border); 
-    padding-bottom: 8px;
-    text-transform: uppercase;
+
+.terminal-wrapper {
+    display: inline;
+    position: relative;
 }
 
-.description p {
+#terminal-text {
+    display: inline;
     color: #ffffff;
     font-size: 1.2rem;
     line-height: 1.6;
     background-color: var(--matrix-overlay);
-    padding: 10px;
-}
-
-/* Terminal Interactive Buttons */
-.description button {
-    border: 1px solid var(--matrix-bright);
-    background: #088020;
-    border-radius: 0;
-    color: #fff;
-    padding: 10px 24px;
+    padding: 2px 5px;
     font-family: var(--matrix-font);
-    text-transform: uppercase;
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background-color: var(--matrix-glow);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: cursorBlink 0.8s infinite steps(2, start);
+    box-shadow: 0 0 8px var(--matrix-glow);
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+.description .btn-outline-success {
+    border: 1px solid var(--matrix-glow);
+    background: transparent;
+    border-radius: 0;
+    color: var(--matrix-glow);
+    padding: 10px 35px;
+    font-family: var(--matrix-font);
+    font-weight: bold;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
 }
 
-.description button:hover {
-    border: 1px solid #fff;
-    background: #fff;
-    color: #000;
-    box-shadow: 0 0 15px #fff;
+.description .btn-outline-success:hover {
+    background: var(--matrix-glow);
+    color: #000000;
+    box-shadow: 0 0 20px var(--matrix-glow);
 }
 
-/*--- Grid Feature Section ---*/
+
 .features {
-    margin: 0;
-    padding: 3em 1em;
-    position: relative;
-    background-color: var(--matrix-bg);
-    background-size: cover;
-    background-position: center;
+    padding: 4em 0;
+    background-color: transparent !important;
+}
+
+
+.feature-card {
+    background-color: var(--matrix-card-bg);
+    border: 1px solid var(--matrix-border);
+    padding: 25px;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+    border-color: var(--matrix-glow);
 }
 
 .feature-title {
     color: var(--matrix-bright);
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     text-align: center;
     font-family: var(--header-font);
     letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
 }
 
-/* Fluid Massive Image Constraints */
+
 .features img {
     display: block;
     max-width: 100%;
@@ -164,117 +224,122 @@ body {
     margin: 0 auto 16px;
     border: 1px solid var(--matrix-border);
     box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
-    background-color: rgba(0, 255, 0, 0.02);
 }
 
-.features p, 
-.features h3 {
+.features p {
     color: var(--matrix-text); 
     font-size: 1.0rem;
+    line-height: 1.6;
     margin-top: 15px;
-    text-align: center;
+    text-align: justify;
 }
 
-/* Matrix Form Inputs */
-.features .form-control,
-.features input {
+.features a {
+    color: var(--matrix-glow);
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-shadow 0.2s ease;
+}
+
+.features a:hover {
+    text-shadow: 0 0 8px var(--matrix-glow);
+}
+
+
+.contact-card h3 {
+    color: var(--matrix-glow);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.built-by-panel h3 {
+    font-size: 1.2rem;
+    color: var(--matrix-bright);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.ohm-symbol {
+    max-width: 120px !important;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5));
+}
+
+
+.features .form-control {
     border-radius: 0;
     background-color: #050505;
     border: 1px solid var(--matrix-border);
     color: var(--matrix-glow);
     font-family: var(--matrix-font);
+    padding: 10px;
 }
 
 .features .form-control:focus {
     background-color: #0a0a0a;
     border-color: var(--matrix-glow);
     color: var(--matrix-glow);
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-.features .btn {
+.features .btn-success {
     background-color: #0fb71f;
     border: 1px solid #589b37;
     color: #fff;
     border-radius: 0;
-    margin-top: 20px;
     font-family: var(--matrix-font);
+    font-weight: bold;
     text-transform: uppercase;
-    width: 100%;
     transition: all 0.2s ease-in-out;
 }
 
-.features .btn:hover {
+.features .btn-success:hover {
     background-color: #222;
     border: 1px solid var(--matrix-glow);
     color: var(--matrix-glow);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
 }
 
-/*--- Team Matrix Grid Section ---*/
-.background {
-    background: var(--matrix-bg);
-    padding: 4em 0;
-    border-top: 1px solid var(--matrix-border);
-}
 
-.team {
-    color: var(--matrix-text); 
-    padding: 0 10%;
-}
-
-/* Modernized Grid over deprecated CSS column-count */
-.team .card-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.team .card {
-    background: rgba(5, 5, 5, 0.8);
-    border: 1px solid var(--matrix-border);
-    padding: 20px;
-    border-radius: 0;
-}
-
-.team .card-title {
-    color: var(--matrix-glow);
-    font-family: var(--header-font);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-/*--- System Footers ---*/
 .page-footer {
     background-color: #050505;
     color: var(--matrix-bright);
     padding: 40px 0 20px;
-    border-top: 2px solid var(--matrix-border);
+    border-top: 2px solid var(--matrix-glow);
+    box-shadow: 0 -10px 25px rgba(0, 255, 0, 0.15);
 }
 
 .footer-copyright {
     color: var(--matrix-dim);
-    padding: 20px 0;
     font-size: 0.9rem;
+    border-top: 1px dashed var(--matrix-border);
+    margin-top: 20px;
 }
 
-/*--- Bootstrap-Aligned Responsive Engine ---*/
-@media (max-width: 991.98px) {
-    .team {
-        padding: 0 30px;
-    }
+.style-address {
+    font-style: normal;
+    line-height: 1.8;
+    color: #ffffff;
 }
+
+.style-link {
+    color: var(--matrix-glow);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.style-link:hover {
+    color: var(--matrix-bright);
+    text-shadow: 0 0 10px var(--matrix-glow);
+}
+
 
 @media (max-width: 768px) {
     .header {
-        min-height: auto;
         padding: 40px 0;
     }
 
     .description {
         padding: 20px;
-        text-align: left; 
     }
     
     .description h1 {
@@ -284,32 +349,4 @@ body {
     .description p {
         font-size: 1rem;
     }
-    
-    .team {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    
-    #demo-modal .btn {
-        min-width: auto;
-    }
-}
-
-/*--- Access Modal Overrides ---*/
-.modal-content {
-    background-color: #050505;
-    border: 1px solid var(--matrix-glow);
-    border-radius: 0;
-    color: var(--matrix-text);
-    font-family: var(--matrix-font);
-}
-
-.modal-header {
-    border-bottom: 1px dashed var(--matrix-border);
-    color: var(--matrix-glow);
-    font-family: var(--header-font);
-}
-
-.modal-footer {
-    border-top: 1px dashed var(--matrix-border);
 }
