@@ -144,6 +144,7 @@ figcaption, table,table caption, tbody, td, th , code, pre, .sourceCode, .abstra
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
+    color: #87dc87;
 }
 
 /*--- footer ---*/
