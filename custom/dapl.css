@@ -29,7 +29,7 @@ canvas {
 /*--- Enhanced Terminal Aesthetic Navigation Bar ---*/
 .navbar {
     background-color: #050505 !important; 
-    border-bottom: 1px solid rgba(0, 204, 0, 0.2); 
+    border: 1px solid rgba(8, 245, 8, 0.781); 
     position: relative;
     z-index: 2;
     padding: 10px 20px;
@@ -74,7 +74,7 @@ canvas {
     width: 100%;
     box-sizing: border-box;
     text-align: left;
-    border: 1px solid rgba(0, 204, 0, 0.15);
+    border: 1px solid rgba(8, 245, 8, 0.781);
     font-family: 'Orbitron', 'Share Tech Mono', sans-serif;
 }
 
@@ -132,22 +132,22 @@ canvas {
     color: #00ff00;
     font-size: 2.2rem;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
-    border-bottom: 1px dashed rgba(0, 204, 0, 0.781); 
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781); 
     padding-bottom: 4px; 
 }
 
 .description h2 {
     color: #87dc87;
     font-size: 1.6rem;
-    border-bottom: 1px dashed rgba(0, 204, 0, 0.781); 
+    border-bottom: 1px dashed rgba(8, 245, 8, 0.781); 
     padding-bottom: 4px;
 }
-code, pre, .sourceCode {
+pre, code, .sourceCode {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
     color: #87dc87;
-    border: 1px dashed rgba(0, 204, 0, 0.781); 
+    border: 1px dashed rgba(8, 245, 8, 0.781); 
     padding-bottom: 4px;
 }
 figcaption, table,table caption, tbody, td, th, .abstract {
@@ -155,7 +155,7 @@ figcaption, table,table caption, tbody, td, th, .abstract {
     font-size: 90%;
     letter-spacing: 0.5px;
     color: #87dc87;
-    border: 1px dashed rgba(0, 204, 0, 0.781); 
+    border: 1px dashed rgba(8, 245, 8, 0.781); 
     padding-bottom: 4px;
     background-color: #050505;
 }
