@@ -131,13 +131,15 @@ canvas {
 .description h1 {
     color: #00ff00;
     font-size: 2.2rem;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.4); 
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+    border-bottom: 1px dashed rgba(0, 204, 0, 0.781); 
+    padding-bottom: 4px; 
 }
 
 .description h2 {
     color: #87dc87;
     font-size: 1.6rem;
-    border-bottom: 1px dashed rgba(0, 204, 0, 0.2); 
+    border-bottom: 1px dashed rgba(0, 204, 0, 0.781); 
     padding-bottom: 4px;
 }
 code, pre, .sourceCode {
@@ -145,12 +147,17 @@ code, pre, .sourceCode {
     font-size: 90%;
     letter-spacing: 0.5px;
     color: #87dc87;
+    border: 1px dashed rgba(0, 204, 0, 0.781); 
+    padding-bottom: 4px;
 }
-figcaption, table,table caption, tbody, td, th,.abstract {
+figcaption, table,table caption, tbody, td, th, .abstract {
     font-family: 'Share Tech Mono', 'Space Mono', Consolas, monospace !important;
     font-size: 90%;
     letter-spacing: 0.5px;
     color: #87dc87;
+    border: 1px dashed rgba(0, 204, 0, 0.781); 
+    padding-bottom: 4px;
+    background-color: #050505;
 }
 
 /*--- footer ---*/
@@ -330,6 +337,7 @@ table {
     overflow-x: auto;
     display: block;
     font-variant-numeric: lining-nums tabular-nums;
+    color: #87dc87;
 }
 
 table caption {
