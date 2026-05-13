@@ -76,7 +76,7 @@ body {
 
 /* Centered Terminal Text Overlay */
 .description {
-    position: absolute; /* Changed from absolute to prevent multi-device text clip */
+    position: absolute; 
     max-width: 45em;
     width: 90%;
     margin: 20px auto;
@@ -169,7 +169,7 @@ body {
 
 .features p, 
 .features h3 {
-    color: var(--matrix-text); /* Fixed contrast crash */
+    color: var(--matrix-text); 
     font-size: 1.0rem;
     margin-top: 15px;
     text-align: center;
@@ -219,7 +219,7 @@ body {
 }
 
 .team {
-    color: var(--matrix-text); /* Enhanced clarity */
+    color: var(--matrix-text); 
     padding: 0 10%;
 }
 
@@ -274,7 +274,7 @@ body {
 
     .description {
         padding: 20px;
-        text-align: left; /* Maintains readability on small layouts */
+        text-align: left; 
     }
     
     .description h1 {
