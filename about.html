@@ -15,10 +15,13 @@
 </head>
 <body>
 
-    <!-- Global Matrix Rain Canvas Background -->
+    <!-- CRT Screen Terminal Glow Vignette Overlay Layer -->
+    <div class="terminal-vignette-glow"></div>
+
+    <!-- Global Fullscreen Matrix Rain Canvas Backdrop -->
     <canvas id="Matrix">Sorry, your browser doesn't support the canvas element.</canvas>
 
-    <!-- Main Navigation Bar -->
+    <!-- Main Navigation Bar Component -->
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">⚞Decypher The Universe ☯ ⚟</a>
@@ -36,19 +39,23 @@
         </div>
     </nav>
 
-    <!-- Hero Header Component -->
+    <!-- Interactive Hero Section -->
     <header class="page-header header">
         <div class="description">
             <h1>About Us</h1>
-            <!-- Interactive Animated Output Node -->
+            <!-- Interactive Animated Terminal Output Container -->
             <div class="terminal-wrapper">
-                <p id="terminal-text" data-text="We are a group of like-minded souls with a deep understanding that there is so much to our world and universe that remains hidden or more likely deliberately obstructed from us. We seek to unravel those mysteries and make them available to all."></p>
+                <p id="terminal-text" data-text="We are a group of like-minded 
+                souls with a deep understanding that there is so much to our 
+                world and universe that remains hidden or more likely deliberately 
+                obstructed from us. We seek to unravel those mysteries and make 
+                them available to all."></p>
                 <span class="terminal-cursor"></span>
             </div>
         </div>
     </header>
 
-    <!-- Content Engine / Team Section Component -->
+    <!-- Content Engine / Team Cards Section Container -->
     <main class="article-container">
         <section class="background">
             <div class="container team">
@@ -77,7 +84,6 @@
                         <img class="card-img-top rounded-circle mx-auto" src="images/Hack.jpg" alt="Sugar Daddy Logan Profile picture">
                         <div class="card-body px-0 pb-0">
                             <h4 class="card-title">Sugar Daddy Logan</h4>
-                            <div class="card-body px-0 pb-0">
                             <p class="card-text mb-0">THE BANK</p>
                         </div>
                     </article>
@@ -87,11 +93,11 @@
         </section>
     </main>
 
-    <!-- System Footer -->
+    <!-- System Footer Structure -->
     <footer class="page-footer">
         <div class="container">
             <div class="footer-copyright text-center">
-                © 2026 Copyright: <a href="github.io" class="text-decoration-none style-link">github.io</a>
+                © 2026 Copyright: <a href="github.io" class="style-link">superegg9562.github.io/ULTRA/</a>
             </div>
         </div>
     </footer>
@@ -99,10 +105,9 @@
     <!-- Dependency Scripts Stack -->
     <script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script defer src="jsdelivr.net"></script>
     <script src="custom/main.js"></script>
     <script src="custom/index.js"></script>
-    <!-- Built-in Terminal Typing Controller Script -->
+    <!-- Built-in Async Terminal Text Typing Processing Script -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const element = document.getElementById("terminal-text");
@@ -113,7 +118,7 @@
                 if (index < rawText.length) {
                     element.textContent += rawText.charAt(index);
                     index++;
-                    setTimeout(typeEngine, 35); // Controls typing speed in milliseconds
+                    setTimeout(typeEngine, 35); 
                 }
             }
             typeEngine();

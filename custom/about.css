@@ -1,47 +1,129 @@
-/*--- Global Full-Bleed Canvas Layers ---*/
-#Matrix {
-    position: fixed; /* Fixes canvas element to viewport across page scrolls */
+/*--- Core Page Config & Theme Variables ---*/
+:root {
+    --matrix-bg: #000000;
+    --matrix-card-bg: rgba(5, 5, 5, 0.90);
+    --matrix-overlay: rgba(34, 34, 34, 0.50);
+    --matrix-dim: #00aa00;
+    --matrix-glow: #00ff00;
+    --matrix-bright: #87dc87;
+    --matrix-text: #a1ffa1;
+    --matrix-border: rgba(0, 204, 0, 0.3);
+    --matrix-font: 'Space Mono', 'Courier New', monospace;
+    --header-font: 'Orbitron', sans-serif;
+}
+
+/*--- Fullscreen Frame Box Adjustments ---*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--matrix-bg);
+    color: var(--matrix-text);
+    hyphens: auto;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    font-family: var(--matrix-font);
+    position: relative;
+}
+
+/*--- Global Edge Border & Vignette Ambient Glow Filters ---*/
+.terminal-vignette-glow {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Pushes matrix stream behind navigation, header, cards, and footer */
-    display: block;
-    pointer-events: none; /* Allows user clicks to pass through canvas to elements below */
+    border: 4px solid var(--matrix-glow); 
+    box-shadow: inset 0 0 100px rgba(0, 255, 0, 0.25), 0 0 40px rgba(0, 255, 0, 0.4); 
+    pointer-events: none; 
+    z-index: 9999; 
 }
 
-/*--- Element Layer Stacking Context Resets ---*/
+/*--- Global Full-Bleed Canvas Layers ---*/
+#Matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    display: block;
+    pointer-events: none;
+}
+
+/*--- Content Layer Hierarchy Overrides ---*/
 .navbar,
 .header,
 .article-container,
 .page-footer {
     position: relative;
-    z-index: 2; /* Forces content sections to stack neatly on top of the fixed background canvas */
+    z-index: 10; 
 }
 
-/*--- Responsive Header & Hero Adjustments ---*/
+/*--- Fixed Bootstrap Navigation Bar Overrides ---*/
+.navbar {
+    background-color: #050505 !important; 
+    border-bottom: 2px solid var(--matrix-glow) !important; 
+    padding: 15px 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.35); 
+}
+
+.navbar-brand {
+    color: var(--matrix-glow) !important; 
+    font-weight: bold;
+    font-family: var(--header-font);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
+}
+
+.nav-link {
+    color: var(--matrix-dim) !important; 
+    font-weight: 500;
+    margin-right: 1em !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--matrix-glow) !important; 
+    text-shadow: 0 0 12px rgba(0, 255, 0, 0.9);
+    background-color: rgba(0, 255, 0, 0.08);
+}
+
+/*--- Responsive Header & Hero Layout Engine ---*/
 .header {
-    background: transparent !important; /* Removes background color to expose the matrix rain */
+    background: transparent !important; 
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0;
+    padding: 60px 0 20px 0;
 }
 
-/*--- Article & Content Layout Engine ---*/
-.article-container {
-    min-height: auto; 
-    padding-bottom: 80px;
+/*--- Centered Terminal Content Frame Box Overlays ---*/
+.description {
+    max-width: 45em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--matrix-card-bg);
+    border: 1px solid var(--matrix-border);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+    font-family: var(--header-font);
 }
 
-.background {
-    background: transparent !important; /* Removes block fills to let digital rain stream smoothly behind cards */
-    padding: 2em 0;
-    border-top: none;
+.description h1 {
+    color: var(--matrix-glow);
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    background-color: var(--matrix-overlay);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/*--- Terminal Animation Mechanics ---*/
+/*--- Dynamic Text Terminal Layout Mechanics ---*/
 .terminal-wrapper {
     display: inline;
     position: relative;
@@ -54,16 +136,18 @@
     line-height: 1.6;
     background-color: var(--matrix-overlay);
     padding: 2px 5px;
+    font-family: var(--matrix-font);
 }
 
 .terminal-cursor {
     display: inline-block;
-    width: 8px;
+    width: 10px;
     height: 1.2rem;
     background-color: var(--matrix-glow);
     margin-left: 4px;
     vertical-align: middle;
     animation: cursorBlink 0.8s infinite steps(2, start);
+    box-shadow: 0 0 8px var(--matrix-glow);
 }
 
 @keyframes cursorBlink {
@@ -71,7 +155,20 @@
     50% { opacity: 1; }
 }
 
-/*--- Team Card Modern Grid Context ---*/
+/*--- Team Matrix Grid Layout Section Rules ---*/
+.article-container {
+    padding-bottom: 60px;
+}
+
+.background {
+    background: transparent !important; 
+    padding: 2em 0;
+}
+
+.team {
+    padding: 0 10%;
+}
+
 .team .card-columns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -80,41 +177,83 @@
 }
 
 .team .card {
-    background: var(--matrix-card-bg); /* Opaque dark tile masks the dense matrix lines for easier reading */
+    background: var(--matrix-card-bg);
     border: 1px solid var(--matrix-border);
     padding: 30px 20px;
     border-radius: 0;
-    backdrop-filter: blur(2px); /* Softens matrix background directly behind card layout boundaries */
+    backdrop-filter: blur(3px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .team .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
     border-color: var(--matrix-glow);
 }
 
-/*--- Profile Picture Render Engine ---*/
+.team .card-title {
+    color: var(--matrix-glow);
+    font-family: var(--header-font);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+}
+
+.team .card-text {
+    color: var(--matrix-text);
+    font-family: var(--matrix-font);
+}
+
+/*--- Profile Picture Render Constraints ---*/
 .team .card-img-top.rounded-circle {
     width: 130px;
     height: 130px;
     object-fit: cover;
     border: 2px solid var(--matrix-border);
     margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
 }
 
-/*--- Footer Cleanup ---*/
+/*--- System Layout Footers ---*/
+.page-footer {
+    background-color: #050505;
+    color: var(--matrix-bright);
+    padding: 30px 0;
+    border-top: 2px solid var(--matrix-glow);
+    box-shadow: 0 -10px 25px rgba(0, 255, 0, 0.15);
+}
+
+.footer-copyright {
+    color: var(--matrix-dim);
+    font-size: 0.9rem;
+}
+
 .style-link {
     color: var(--matrix-glow);
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
+
 .style-link:hover {
     color: var(--matrix-bright);
-    text-shadow: 0 0 8px var(--matrix-glow);
+    text-shadow: 0 0 10px var(--matrix-glow);
+}
+
+/*--- Responsive Media Engine Breakpoints ---*/
+@media (max-width: 991.98px) {
+    .team { padding: 0 30px; }
+}
+
+@media (max-width: 768px) {
+    .header { padding: 30px 0; }
+    .description { padding: 20px; text-align: center; }
+    .description h1 { font-size: 1.8rem; }
+    .description p { font-size: 1rem; }
+    .team { padding: 0 15px; }
 }
