@@ -33,6 +33,7 @@ canvas {
     height: 100%;
     display: block;
     background: transparent;
+    border: 2px solid var(--matrix-glow);
     z-index: 0;
     pointer-events: none;
 }
