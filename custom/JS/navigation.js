@@ -45,3 +45,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const ExcelProjectButton = document.getElementById("ExcelProject-trigger");
+    
+
+    if (ExcelProjectButton) {
+        ExcelProjectButton.addEventListener("click", (event) => {
+  
+            event.preventDefault();
+            
+
+            const targetUrl = "excel-training-monitor.html";
+            
+           
+            window.location.href = targetUrl;
+            
+            // Option B: Un-comment the line below if you want it to jump open inside a brand new browser tab instead:
+            // window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
+});
