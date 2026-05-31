@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             
 
-            const targetUrl = "DAPL.html";
+            const targetUrl = "../../html/DAPL.html";
             
            
             window.location.href = targetUrl;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             
 
-            const targetUrl = "theme-matrix-vs.html";
+            const targetUrl = "../../html/theme-matrix-vs.html";
             
            
             window.location.href = targetUrl;
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             
 
-            const targetUrl = "excel-training-monitor.html";
+            const targetUrl = "../../html/excel-training-monitor.html";
             
            
             window.location.href = targetUrl;
