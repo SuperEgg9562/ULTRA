@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ULTRA Matrix Theme | Visual Studio</title>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="custom/index.css">
+<link rel="preconnect" href="googleapis.com">
+    <link rel="preconnect" href="gstatic.com" crossorigin>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="custom/index.css">
 </head>
 <body>
 <div class="terminal-vignette-glow"></div>
-<canvas id="Matrix"></canvas>
+<canvas id="Matrix">Sorry, your browser doesn't support the canvas element.</canvas>
 
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">⚞ ULTRA ⚟</a>
-    </div>
+    <button class="navbar-toggler navbar-dark border-1" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="DAPL.html">DAPL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+        </div>
 </nav>
 
 <header class="page-header header">
@@ -147,8 +162,10 @@ public class UltraTheme
 </div>
 </main>
 
-<script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="custom/main2.js"></script>
+    <script src="bootstrap/jquery/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="custom/main2.js"></script>
+    <script src="custom/index.js"></script>
+    <script src="custom/navigation.js"></script>
 </body>
 </html>
