@@ -8,10 +8,9 @@
     --matrix-bright: #87dc87;
     --matrix-text: #a1ffa1;
     --matrix-border: rgba(0, 204, 0, 0.3);
-    --matrix-font: 'Space Mono', 'Share Tech Mono', 'Courier New', monospace;
-    --header-font: 'Orbitron', 'Share Tech Mono', sans-serif;
+    --matrix-font: 'Space Mono', 'Courier New', monospace;
+    --header-font: 'Orbitron', sans-serif;
 }
-
 html,
 body {
     margin: 0;
@@ -22,12 +21,9 @@ body {
     hyphens: auto;
     overflow-wrap: break-word;
     text-rendering: optimizeLegibility;
-    font-kerning: normal;
     font-family: var(--matrix-font);
     position: relative;
 }
-
-
 .terminal-vignette-glow {
     position: fixed;
     inset: 0;
@@ -42,8 +38,6 @@ body {
     pointer-events: none;
     z-index: 9999;
 }
-
-
 #Matrix {
     position: fixed;
     inset: 0;
@@ -55,62 +49,45 @@ body {
     display: block;
     pointer-events: none;
 }
-
-
 .navbar,
 .header,
-.features,
+.article-container,
 .page-footer {
     position: relative;
     z-index: 10;
 }
-
-
 .navbar {
     background-color: #050505 !important; 
     border-bottom: 2px solid var(--matrix-glow) !important; 
-    position: relative;
-    z-index: 20;
     padding: 15px 20px;
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.35);
 }
-
 .navbar-brand {
     color: var(--matrix-glow) !important; 
     font-weight: bold;
     font-family: var(--header-font);
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); 
 }
-
 .nav-link {
     color: var(--matrix-dim) !important; 
     font-weight: 500;
     margin-right: 1em !important;
     transition: all 0.2s ease-in-out;
 }
-
 .nav-link:hover,
 .nav-link:focus {
     color: var(--matrix-glow) !important; 
     text-shadow: 0 0 12px rgba(0, 255, 0, 0.9);
     background-color: rgba(0, 255, 0, 0.08);
 }
-
-
 .header {
     background: transparent !important;
-    overflow: hidden;
-    position: relative;
-    margin: 0;
-    width: 100%;
-    padding: 60px 0;
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 0 20px 0;
 }
-
-
 .description {
     max-width: 45em;
     width: 90%;
@@ -122,7 +99,6 @@ body {
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
     font-family: var(--header-font);
 }
-
 .description h1 {
     color: var(--matrix-glow);
     font-size: 2.5rem;
@@ -132,13 +108,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
-
 .terminal-wrapper {
     display: inline;
     position: relative;
 }
-
 #terminal-text {
     display: inline;
     color: #ffffff;
@@ -148,7 +121,6 @@ body {
     padding: 2px 5px;
     font-family: var(--matrix-font);
 }
-
 .terminal-cursor {
     display: inline-block;
     width: 10px;
@@ -159,198 +131,91 @@ body {
     animation: cursorBlink 0.8s infinite steps(2, start);
     box-shadow: 0 0 8px var(--matrix-glow);
 }
-
 @keyframes cursorBlink {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
-
-
-.description .btn-outline-success {
-    border: 1px solid var(--matrix-glow);
-    background: transparent;
-    border-radius: 0;
-    color: var(--matrix-glow);
-    padding: 10px 35px;
-    font-family: var(--matrix-font);
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+.article-container {
+    padding-bottom: 60px;
 }
-
-.description .btn-outline-success:hover {
-    background: var(--matrix-glow);
-    color: #000000;
-    box-shadow: 0 0 20px var(--matrix-glow);
+.background {
+    background: transparent !important;
+    padding: 2em 0;
 }
-
-
-.features {
-    padding: 4em 0;
-    background-color: transparent !important;
+.team {
+    padding: 0 10%;
 }
-
-
-.feature-card {
-    background-color: var(--matrix-card-bg);
+.team .card-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+.team .card {
+    background: var(--matrix-card-bg);
     border: 1px solid var(--matrix-border);
-    padding: 25px;
-    height: 100%;
+    padding: 30px 20px;
+    border-radius: 0;
     backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
-.feature-card:hover {
+.team .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
     border-color: var(--matrix-glow);
 }
-
-.feature-title {
-    color: var(--matrix-bright);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    text-align: center;
+.team .card-title {
+    color: var(--matrix-glow);
     font-family: var(--header-font);
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
-}
-
-
-.features img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto 16px;
-    border: 1px solid var(--matrix-border);
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.2);
-}
-
-.features p {
-    color: var(--matrix-text); 
-    font-size: 1.0rem;
-    line-height: 1.6;
-    margin-top: 15px;
-    text-align: justify;
-}
-
-.features a {
-    color: var(--matrix-glow);
-    text-decoration: none;
-    font-weight: bold;
-    transition: text-shadow 0.2s ease;
-}
-
-.features a:hover {
-    text-shadow: 0 0 8px var(--matrix-glow);
-}
-
-
-.contact-card h3 {
-    color: var(--matrix-glow);
-    text-align: center;
-    margin-top: 15px;
-}
-
-.built-by-panel h3 {
-    font-size: 1.2rem;
-    color: var(--matrix-bright);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    margin-top: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
-
-.ohm-symbol {
-    max-width: 120px !important;
-    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5));
-}
-
-
-.features .form-control {
-    border-radius: 0;
-    background-color: #050505;
-    border: 1px solid var(--matrix-border);
-    color: var(--matrix-glow);
+.team .card-text {
+    color: var(--matrix-text);
     font-family: var(--matrix-font);
-    padding: 10px;
 }
-
-.features .form-control:focus {
-    background-color: #0a0a0a;
-    border-color: var(--matrix-glow);
-    color: var(--matrix-glow);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+.team .card-img-top.rounded-circle {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: 2px solid var(--matrix-border);
+    margin-bottom: 15px;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
 }
-
-.features .btn-success {
-    background-color: #0fb71f;
-    border: 1px solid #589b37;
-    color: #fff;
-    border-radius: 0;
-    font-family: var(--matrix-font);
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
-}
-
-.features .btn-success:hover {
-    background-color: #222;
-    border: 1px solid var(--matrix-glow);
-    color: var(--matrix-glow);
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
-}
-
-
 .page-footer {
     background-color: #050505;
     color: var(--matrix-bright);
-    padding: 40px 0 20px;
+    padding: 30px 0;
     border-top: 2px solid var(--matrix-glow);
     box-shadow: 0 -10px 25px rgba(0, 255, 0, 0.15);
 }
-
 .footer-copyright {
     color: var(--matrix-dim);
     font-size: 0.9rem;
-    border-top: 1px dashed var(--matrix-border);
-    margin-top: 20px;
 }
-
-.style-address {
-    font-style: normal;
-    line-height: 1.8;
-    color: #ffffff;
-}
-
 .style-link {
     color: var(--matrix-glow);
     text-decoration: none;
     transition: all 0.2s ease-in-out;
 }
-
 .style-link:hover {
     color: var(--matrix-bright);
     text-shadow: 0 0 10px var(--matrix-glow);
 }
-
-
+@media (max-width: 991.98px) {
+    .team { padding: 0 30px; }
+}
 @media (max-width: 768px) {
-    .header {
-        padding: 40px 0;
-    }
-
-    .description {
-        padding: 20px;
-    }
-    
-    .description h1 {
-        font-size: 1.8rem;
-    }
-    
-    .description p {
-        font-size: 1rem;
-    }
+    .header { padding: 30px 0; }
+    .description { padding: 20px; text-align: center; }
+    .description h1 { font-size: 1.8rem; }
+    .description p { font-size: 1rem; }
+    .team { padding: 0 15px; }
 }
