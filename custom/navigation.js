@@ -24,3 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const VSThemeProjectButton = document.getElementById("VSThemeProject-trigger");
+    
+
+    if (VSThemeProjectButton) {
+        VSThemeProjectButton.addEventListener("click", (event) => {
+  
+            event.preventDefault();
+            
+
+            const targetUrl = "theme-matrix-vs.html";
+            
+           
+            window.location.href = targetUrl;
+            
+            // Option B: Un-comment the line below if you want it to jump open inside a brand new browser tab instead:
+            // window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        });
+    }
+});
