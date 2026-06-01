@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             
 
-            const targetUrl = "DAPL.html";
+            const targetUrl = "html/DAPL.html";
             
            
             window.location.href = targetUrl;
