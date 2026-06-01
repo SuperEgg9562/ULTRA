@@ -4,7 +4,7 @@
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ULTRA Matrix Theme | Visual Studio</title>
+<title>Excel Training Monitor | ULTRA</title>
 <link rel="preconnect" href="googleapis.com">
     <link rel="preconnect" href="gstatic.com" crossorigin>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -38,17 +38,17 @@
 
         <div class="terminal-wrapper">
             <p>
-                Excel Training Monitor uses excel sheets to 
-                create a custom alert that can display in a 
-                grid, pie chart and a list like notifictaion 
-                that can be set to trigger a reminder at any time 
-                of your choosing.
+                Excel Training Monitor is a Matrix-themed training spreadsheet
+                monitor and GridBook editor. It can create and edit Excel files,
+                watch training status changes, show grouped reminders, export
+                CSV and chart images, print reports to PDF, and send optional
+                ntfy.sh reminders to phones or email.
             </p>
         </div>
 
         <div class="mt-4">
-            <a href="#" class="btn btn-outline-success btn-lg">INSTALL</a>
-            <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor" class="btn btn-outline-success btn-lg">GITHUB</a>
+            <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor/releases/latest" class="btn btn-outline-success btn-lg">LATEST RELEASE</a>
+            <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor" class="btn btn-outline-success btn-lg">SOURCE REPO</a>
         </div>
     </div>
 </header>
@@ -62,14 +62,14 @@
 <div class="col-md-3">
 <article class="feature-card">
 <h3 class="feature-title">Version</h3>
-<p>1.0.0</p>
+<p>Current source version: 1.0.2<br>Previous validated version: 1.0.1<br>Build script auto-increments patch versions.</p>
 </article>
 </div>
 
 <div class="col-md-3">
 <article class="feature-card">
 <h3 class="feature-title">Downloads</h3>
-<p>TBD</p>
+<p><a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor/releases/latest">GitHub Releases</a></p>
 </article>
 </div>
 
@@ -83,7 +83,7 @@
 <div class="col-md-3">
 <article class="feature-card">
 <h3 class="feature-title">Support</h3>
-<p>WIN 10</p>
+<p>Windows 10/11 x64</p>
 </article>
 </div>
 
@@ -130,9 +130,16 @@
 
 <section class="mb-5">
 <article class="feature-card">
-<h2 class="feature-title"></h2>
+<h2 class="feature-title">Project Links</h2>
 <pre style="background:#000;border:1px solid #00ff00;color:#00ff00;padding:20px;">
+Source:  https://github.com/SuperEgg9562/ExcelTrainingMonitor
+Release: https://github.com/SuperEgg9562/ExcelTrainingMonitor/releases/latest
+Page:    https://superegg9562.github.io/ULTRA/html/excel-training-monitor.html
 
+Release assets:
+- Portable self-contained ZIP
+- Optional installer EXE when Inno Setup is available
+- Clean source/pipeline ZIP
 </pre>
 </article>
 </section>
@@ -141,12 +148,23 @@
 <article class="feature-card">
 <h2 class="feature-title">Installation</h2>
 <ol>
-<li>Download ExcelTraingMonitor.Zip from here: <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor" class="btn btn-outline-success btn-lg">GITHUB</a></li>
-<li>Unpack ExcelTraingMonitor.Zip using decompression software.</li>
-<li>Open unzipped ExcelTraingMonitor folder.</li>
-<li>Double-Click the build.bat file.</li>
-<li>When it's finished building you will find an executable in the publish folder.</li>
-<li>Double-Click this exe to start the program</li>
+<li>Open the <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor/releases/latest">latest GitHub Release</a>.</li>
+<li>Download the portable release ZIP, or download the installer if one is attached.</li>
+<li>For the portable ZIP, extract it and run <code>ExcelTrainingMonitor.exe</code>.</li>
+<li>For the installer, run <code>ExcelTrainingMonitorSetup-&lt;version&gt;.exe</code> and follow the prompts.</li>
+</ol>
+</article>
+</section>
+
+<section class="mb-5">
+<article class="feature-card">
+<h2 class="feature-title">Build From Source</h2>
+<ol>
+<li>Install the .NET 8 SDK or newer from <a href="https://dotnet.microsoft.com/download/dotnet/8.0">Microsoft</a>.</li>
+<li>Clone <a href="https://github.com/SuperEgg9562/ExcelTrainingMonitor">the source repository</a>.</li>
+<li>Run <code>build.bat</code> from the repository root.</li>
+<li>The script checks dependencies, increments the patch version, builds a self-contained release, and creates ZIP assets under <code>artifacts</code>.</li>
+<li>Install Inno Setup only if you also want an installer EXE.</li>
 </ol>
 </article>
 </section>
@@ -155,9 +173,10 @@
 <article class="feature-card">
 <h2 class="feature-title">Release Notes</h2>
 <ul>
-<li>Initial release todo</li>
-<li>Release Page Link todo</li>
-<li></li>
+<li>Current direction: portable release ZIP plus optional installer.</li>
+<li>GitHub Actions workflow creates releases from version tags.</li>
+<li>GridBook Editor adds spreadsheet-style create/edit/save/export tools.</li>
+<li>Reminder agent can continue date/time reminders after the main window closes.</li>
 </ul>
 </article>
 </section>
